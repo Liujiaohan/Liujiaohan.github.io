@@ -228,7 +228,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/30/Java内存模型与线程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/constraintlayout/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -247,7 +247,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/30/Java内存模型与线程/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/07/05/constraintlayout/" itemprop="url">constraintlayout使用</a></h1>
         
 
         <div class="post-meta">
@@ -259,8 +259,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T00:32:22+08:00">
-                2017-12-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
+                2017-07-05
               </time>
             
 
@@ -269,6 +269,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/安卓/" itemprop="url" rel="index">
+                    <span itemprop="name">安卓</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -299,7 +321,21 @@
       
         
           
-            <h1 id="Java内存模型与线程"><a href="#Java内存模型与线程" class="headerlink" title="Java内存模型与线程"></a>Java内存模型与线程</h1><h2 id="主内存与工作内存"><a href="#主内存与工作内存" class="headerlink" title="主内存与工作内存"></a>主内存与工作内存</h2>
+            <p>#constraintlayout使用</p>
+<p><a href="http://blog.csdn.net/guolin_blog/article/details/53122387" target="_blank" rel="noopener">constraintlayoutrumen</a></p>
+<ul>
+<li>基本使用</li>
+</ul>
+<p><img src="https://github.com/Liujiaohan/Blog/blob/master/img/base.gif?raw=true" alt="基本使用"></p>
+<ul>
+<li>锁链的使用</li>
+</ul>
+<p><img src="https://github.com/Liujiaohan/Blog/blob/master/img/chain.gif?raw=true" alt="锁链"></p>
+<ul>
+<li>约束线的使用</li>
+</ul>
+<p><img src="https://github.com/Liujiaohan/Blog/blob/master/img/baseline.gif?raw=true" alt="约束线的使用"></p>
+
           
         
       
@@ -347,7 +383,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/30/aop/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/Majority Element II/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -366,7 +402,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/30/aop/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/07/05/Majority Element II/" itemprop="url">Majority Element</a></h1>
         
 
         <div class="post-meta">
@@ -378,8 +414,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T00:32:22+08:00">
-                2017-12-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
+                2017-07-05
               </time>
             
 
@@ -388,6 +424,362 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Majority-Element-II"><a href="#Majority-Element-II" class="headerlink" title="Majority Element II"></a>Majority Element II</h3><p>Given an integer array of size <em>n</em>, find all elements that appear more than <code>⌊ n/3 ⌋</code> times. The algorithm should run in linear time and in O(1) space.</p>
+<ul>
+<li><p>从题意可知，超过n/3的数可能有0、1或2个</p>
+</li>
+<li><p>先假设有两个，为num1，num2,则数列可分为num1,num2,和非num1和num2这三类，我们容易的到这样一个事实，这三类数字同时减少一个，不会改变最终结果，总数大于n/3的数字总数仍大于n/3</p>
+</li>
+<li><p>在这道题中，如果我们同时减去的三个互补相同的数字可能有以下几种情况：</p>
+<ul>
+<li>减去三个非num1和num2的数字</li>
+<li>减去一个num1两个非num1和num2的数字</li>
+<li>减去一个num2两个非num1和num2的数字</li>
+<li>减去一个num1一个num2和一个非num1和num2的数字</li>
+</ul>
+<p>以上几种情况都不会影响最终结果</p>
+</li>
+<li><p>最后要解决的就是怎么保证减去的都是互不相同的数字，具体实现看代码，感觉就像一个栈一样，有两个栈分别为num1、num2，如果当前数等于其中一个，则把数字放入对应的栈，否则两个栈的栈顶都出栈，如果栈空了就把当前数字放入栈内，最后栈内的数字一定包含大于n/3的数字</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; majorityElement(int[] nums) &#123;</span><br><span class="line">        int total1=0,total2=0,num1=9,num2=99;</span><br><span class="line">        for (int i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">            if (nums[i]==num1)&#123;</span><br><span class="line">                total1++;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if (nums[i]==num2)&#123;</span><br><span class="line">                total2++;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if (total1==0)&#123;</span><br><span class="line">                num1=nums[i];</span><br><span class="line">                total1=1;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if (total2==0)&#123;</span><br><span class="line">                num2=nums[i];</span><br><span class="line">                total2=1;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            total1--;</span><br><span class="line">            total2--;</span><br><span class="line">        &#125;</span><br><span class="line">        total1=0;</span><br><span class="line">        total2=0;</span><br><span class="line">        for (int i=0;i&lt;nums.length;i++)&#123;   </span><br><span class="line">            if (num1==nums[i]) total1++;</span><br><span class="line">            if (num2==nums[i]) total2++;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; list=new ArrayList();</span><br><span class="line">        if (total1&gt;nums.length/3) list.add(num1);</span><br><span class="line">        if (total2&gt;nums.length/3) list.add(num2);</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/线程间协作-《thinking in java》读书笔记（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/线程间协作-《thinking in java》读书笔记（一）/" itemprop="url">线程的协作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>线程间协作即有多个线程需要按照一定顺序相互协作进行。主要有两种方法来实现，使用锁（互斥）来同步两个任务的行为。另一种是使用BlockingQueue，它已经帮我们处理好了同步机制，实现更加简单。</p>
+<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>接下来以一个实际场景为例，进行演示。假设在一个餐馆中有一个服务员，有一个厨师，而服务员要等到厨子把菜做好了才能上菜，然后回来继续等待。而厨师得到新订单后开始做菜。用两种方式实现之前，我们分析知厨师和服务员分别是一个独立的线程，他们通过餐厅联结在一起。在这个模型中厨师代表生产者，服务员代表消费者。Order是他们共享的资源，需要进行同步。</p>
+<h4 id="使用锁的互斥"><a href="#使用锁的互斥" class="headerlink" title="使用锁的互斥"></a>使用锁的互斥</h4><ul>
+<li><p>菜</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class Order &#123;</span><br><span class="line">    private int num=0;</span><br><span class="line"></span><br><span class="line">    public Order(int num) &#123;</span><br><span class="line">        this.num=num;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;order num:&quot;+num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>餐馆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class Restaurant &#123;</span><br><span class="line">    Order order;</span><br><span class="line">    Chef chef=new Chef(this);</span><br><span class="line">    Waiter waiter=new Waiter(this);</span><br><span class="line">    ExecutorService executorService= Executors.newCachedThreadPool();</span><br><span class="line"></span><br><span class="line">    public Restaurant() &#123;</span><br><span class="line">        order =null;</span><br><span class="line">        executorService.execute(chef);</span><br><span class="line">        executorService.execute(waiter);</span><br><span class="line">        try &#123;</span><br><span class="line">            TimeUnit.SECONDS.sleep(5);</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        new Restaurant();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>厨师</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class Chef implements Runnable &#123;</span><br><span class="line">    private Restaurant restaurant;</span><br><span class="line">    private int counter=0;</span><br><span class="line">    public Chef(Restaurant restaurant) &#123;</span><br><span class="line">        this.restaurant = restaurant;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        try&#123;</span><br><span class="line">            while (!Thread.interrupted())&#123;</span><br><span class="line">                synchronized (this)&#123;</span><br><span class="line">                    while (restaurant.meal!=null)&#123;</span><br><span class="line">                        wait();//等服务员上菜，获得新订单</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                synchronized (restaurant.waiter)&#123;</span><br><span class="line">                    //获得服务员的锁，让他等我做菜</span><br><span class="line">                    restaurant.meal=new Meal(counter++);</span><br><span class="line">                    System.out.print(&quot;a meal is done&quot;);</span><br><span class="line">                    Thread.sleep(500);</span><br><span class="line">                    restaurant.waiter.notifyAll();</span><br><span class="line">                    //告诉服务员可以上菜了</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Waiter implements Runnable &#123;</span><br><span class="line">    private Restaurant restaurant;</span><br><span class="line"></span><br><span class="line">    public Waiter(Restaurant restaurant) &#123;</span><br><span class="line">        this.restaurant = restaurant;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            while (!Thread.interrupted())&#123;</span><br><span class="line">                synchronized (this)&#123;</span><br><span class="line">                    while (restaurant.order ==null)&#123;</span><br><span class="line">                        wait();//等待厨师做完菜后被chef的notifyAll()唤醒，注意wait()会释放当前获得的锁</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                synchronized (restaurant.chef)&#123;</span><br><span class="line">                    System.out.print(&quot;waiter: order up\n&quot;);</span><br><span class="line">                    restaurant.order =null;</span><br><span class="line">                    restaurant.chef.notifyAll();//告诉厨师可以做菜了</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;catch (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/5496903-85d4252301cb7018.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>由此可见chef与waiter按照顺序协调了</p>
+<h3 id="使用BlockingQueue同步"><a href="#使用BlockingQueue同步" class="headerlink" title="使用BlockingQueue同步"></a>使用BlockingQueue同步</h3><ul>
+<li><p>创建自己的BlockingQueue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public class MealQueue extends LinkedBlockingQueue&lt;Order&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>餐馆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class Restaurant &#123;</span><br><span class="line">    private MealQueue waitQueue;</span><br><span class="line">    private MealQueue finishedQueue;</span><br><span class="line">    private Chef chef;</span><br><span class="line">    private Waiter waiter;</span><br><span class="line"></span><br><span class="line">    public Restaurant() &#123;</span><br><span class="line">        waitQueue = new MealQueue();</span><br><span class="line">        finishedQueue = new MealQueue();</span><br><span class="line">        chef = new Chef(waitQueue, finishedQueue);</span><br><span class="line">        waiter = new Waiter(waitQueue, finishedQueue);</span><br><span class="line">        ExecutorService executorService = Executors.newCachedThreadPool();</span><br><span class="line">        executorService.execute(chef);</span><br><span class="line">        executorService.execute(waiter);</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            Thread.sleep(5000);</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        new Restaurant();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>厨师</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class Chef implements Runnable&#123;</span><br><span class="line">    private MealQueue waitQueue;</span><br><span class="line">    private MealQueue finishedQueue;</span><br><span class="line"></span><br><span class="line">    public Chef(MealQueue waitQueue, MealQueue finishedQueue) &#123;</span><br><span class="line">        this.waitQueue = waitQueue;</span><br><span class="line">        this.finishedQueue = finishedQueue;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            while (!Thread.interrupted())&#123;</span><br><span class="line">                Order order =waitQueue.take();</span><br><span class="line">                Thread.sleep(500);</span><br><span class="line">                System.out.print(&quot;chef:order done   &quot;+ order.toString()+&quot;\n&quot;);</span><br><span class="line">                finishedQueue.add(order);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public class Waiter implements Runnable&#123;</span><br><span class="line">    private MealQueue waitQueue;</span><br><span class="line">    private MealQueue finishedQueue;</span><br><span class="line">    private int count;</span><br><span class="line"></span><br><span class="line">    public Waiter(MealQueue waitQueue, MealQueue finishedQueue) &#123;</span><br><span class="line">        this.waitQueue = waitQueue;</span><br><span class="line">        this.finishedQueue = finishedQueue;</span><br><span class="line">        count=0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            while (!Thread.interrupted())&#123;</span><br><span class="line">                Order newOrder=new Order(count++);</span><br><span class="line">                waitQueue.add(newOrder);</span><br><span class="line">                System.out.print(&quot;waiter:a new order\n&quot;);</span><br><span class="line">                Order order =finishedQueue.take();</span><br><span class="line">                System.out.print(&quot;waiter:order complete  &quot;+ order.toString()+&quot;\n&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/5496903-1fe897f73fd2c30c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片.png"><br>在这个版本中，我们没有在任何一个地方显示加锁，但它仍能有序进行非常简单</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我们通过两种方法完成了线程的协作，个人觉得使用BlockingQueuer更容易也更好管理。最后还有一个例子模拟生产吐司面包，第一步制作吐司，第二步抹黄油，第三步涂果酱。代码已同步到<a href="https://github.com/Liujiaohan/concurrence" target="_blank" rel="noopener">github</a>，不再赘述。如发现错误，欢迎指正。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/aop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/aop/" itemprop="url">AOP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/安卓/" itemprop="url" rel="index">
+                    <span itemprop="name">安卓</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -458,635 +850,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MethodSignature signature = (MethodSignature) joinPoint.getSignature();</span><br><span class="line">Method method = signature.getMethod();</span><br><span class="line">// 通过Method对象得到切点上的注解</span><br><span class="line">AnnoJoinPoint annotation = method.getAnnotation(AnnoJoinPoint.class);</span><br><span class="line">String value = annotation.value();</span><br><span class="line">int type = annotation.type();</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nosalt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="nosalt">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/29/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-29T21:27:06+08:00">
-                2017-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/reserved/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nosalt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="nosalt">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/13/reserved/" itemprop="url">反编译</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T13:36:00+08:00">
-                2017-07-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/安卓/" itemprop="url" rel="index">
-                    <span itemprop="name">安卓</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="反编译基础知识"><a href="#反编译基础知识" class="headerlink" title="反编译基础知识"></a>反编译基础知识</h2><h3 id="什么是apk"><a href="#什么是apk" class="headerlink" title="什么是apk"></a>什么是apk</h3><h4 id="APK简介与描述"><a href="#APK简介与描述" class="headerlink" title="APK简介与描述"></a>APK简介与描述</h4><p>APK是AndroidPackage的缩写，即Android安装包(apk)，通过将APK文件直接传到Android模拟器或Android手机中执行即可安装。apk把 android sdk编译的工程打包成一个安装程序文件,格式为apk。APK文件其实是zip格式，但后缀名被修改为apk，直接解压就可以的到Dex等文件。Dex是Dalvik VM executes的全称，即Android Dalvik执行程序，并非Java ME的字节码而是Dalvik字节码。  </p>
-<h4 id="APK文件的组成"><a href="#APK文件的组成" class="headerlink" title="APK文件的组成"></a>APK文件的组成</h4><p>将后缀改为zip直接解压<br><img src="http://img.blog.csdn.net/20170409152301600?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjI3ODMzNzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<ol>
-<li>META-INF目录下存放的是签名信息，用来保证apk包的完整性和系统的安全。编译生成一个apk包时，会对所有要打包的文件做一个校验计算，并把计算结果放在META-INF目录下。这就保证了apk包里的文件不能被随意替换。比如你把其中的一段代码替换或者把资源替换重新导包，基本不可能。  </li>
-<li>res目录存放资源文件，图片字符串等等</li>
-<li>lib目录下的子目录armeabi存放的是一些so文件。如果是用SDK和NDK开发的话，这部分很重要，甚至可以通过把一些不是so文件的文件通过改名打包到apk中.</li>
-<li>classes.dex 是java源码编译后生成的java字节码文件（首先是java文件通过jdk编译成字节码文件然后经过dex后编译成classes.dex。</li>
-<li>resources.arsc是编译后的二进制资源文件的索引(apk文件的资源表(索引))</li>
-<li>assets目录可以存放一些配置文件和资源，它们在编译是可以通过系统提供的api调用得到</li>
-<li>AndroidMainifast.xml是程序全局配置文件</li>
-</ol>
-<h3 id="从Java源码到apk"><a href="#从Java源码到apk" class="headerlink" title="从Java源码到apk"></a>从Java源码到apk</h3><p><img src="http://img.blog.csdn.net/20170409150023349?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjI3ODMzNzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="从Java源码到apk过程">  </p>
-<ol>
-<li>aapt即Android Asset Packaging Tool , 在SDK的tools/目录下. 该工具可以查看, 创建, 更新ZIP格式的文档附件(zip, jar, apk). 也可将资源文件编译成二进制文件.给你的Activity提供所需的资源文件如AndroidManifest.xml，XML文件,并编译它们。同时产生R.java文件，使你可以在java代码中引用这些资源。</li>
-<li>aidl工具把.aidl接口转换成Java接口。  </li>
-<li>你所有的Java代码,包括 R.java和 .aidl文件,由Java编译器和编译输出.class文件。  </li>
-<li>dex工具把.class文件转换成Dalvik字节文件，第三方的类和.class也被转换成.dex文件  </li>
-<li>编译好的dex文件以及编译过的资源和一些其他资源被送到apkbuilder编译成apk  </li>
-<li>决定生成Debug还是Release版本，release需要签名和keystore  </li>
-<li>如果选择release版本，还需要使用zipalign工具对apk对齐。齐处理即使得所有资源文件距离文件起始偏移为4字节的整数倍，这样通过内存映射访问apk文件时处理速度更快<h2 id="开始反编译"><a href="#开始反编译" class="headerlink" title="开始反编译"></a>开始反编译</h2><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/Java零碎知识点/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nosalt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="nosalt">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/13/Java零碎知识点/" itemprop="url">Java零碎知识点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T13:36:00+08:00">
-                2017-07-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Java零碎知识点"><a href="#Java零碎知识点" class="headerlink" title="Java零碎知识点"></a>Java零碎知识点</h1><h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><h4 id="final类"><a href="#final类" class="headerlink" title="final类"></a>final类</h4><p><a href="&quot;http://yqgao.blog.51cto.com/773490/170194&quot;">链接</a></p>
-<p>即final类不能被继承，不能被覆盖，以及final类在执行速度方面比一般类快</p>
-<h4 id="final参数"><a href="#final参数" class="headerlink" title="final参数"></a>final参数</h4><p>final参数的含义如同final变量一样，是常数参数，即当方法接受了这个参数后，其值不能改变。在函数中开匿名内部类需要定义为final</p>
-<h4 id="final方法"><a href="#final方法" class="headerlink" title="final方法"></a>final方法</h4><p>final方法不能被子类覆盖</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/Java注解全解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nosalt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="nosalt">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/13/Java注解全解/" itemprop="url">Java注解全解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T13:29:00+08:00">
-                2017-07-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Java注解全解"><a href="#Java注解全解" class="headerlink" title="Java注解全解"></a>Java注解全解</h1><h4 id="什么是Java注解？"><a href="#什么是Java注解？" class="headerlink" title="什么是Java注解？"></a>什么是Java注解？</h4><p>注解(也被成为元数据)为我们在代码中添加信息提供一种形式化的方法，使我们在稍后某个地方可以方便地使用这些数据(如使用反射的方法使用)。</p>
-<p>推荐一个简单易懂的教程</p>
-<p><a href="http://www.imooc.com/learn/456" target="_blank" rel="noopener">慕课网全面解析Java注解</a></p>
-<h4 id="注解的分类"><a href="#注解的分类" class="headerlink" title="注解的分类"></a>注解的分类</h4><h5 id="按来源"><a href="#按来源" class="headerlink" title="按来源"></a>按来源</h5><ol>
-<li><p>标准注解  </p>
-<p>@Override  表示当前的方法将覆盖超类的方法</p>
-<p>@Deprecated 中文意思是弃用，如果在其他地方使用了为它的元素，那么编译器会发出警告信息</p>
-<p>@SuppressWarnings 关闭编译器的警告信息，如你使用了被@Deprecated的元素，可以用此注解关闭警告的信息</p>
-<p>​    </p>
-</li>
-<li><p>元注解(即注解的注解在自定义注解中会用到)</p>
-<p>@Target 表示该注解可以用于什么地方 可能的参数有</p>
-<ul>
-<li>ElementType.CONSTRUCTOR:构造器的声明</li>
-<li>ElementType.FIELD：域声明</li>
-<li>ElementType.LOCAL_VARIABLE：局部变量声明</li>
-<li>ElementType.METHOD：方法声明</li>
-<li>ElementType.PACAKAGE：包声明</li>
-<li>ElementType.PARAMENTER：参数声明</li>
-<li>ElementType.TYPE：类、接口、enum声明</li>
-</ul>
-<p>@Retention 表示需要在什么时候在什么时候保存该编译信息</p>
-<ul>
-<li>SOURCE 将被编译器弃用</li>
-<li>CLASS 在class中可用，但会被VM弃用</li>
-<li>RUNTIME 在运行期间也保留注解，因此可以通过反射机制读取注解的信息</li>
-</ul>
-<p>@Documented</p>
-<ul>
-<li>该注解包含在Javadoc中</li>
-</ul>
-<p>@Inherited</p>
-<ul>
-<li>允许子类继承父类的注解</li>
-</ul>
-</li>
-</ol>
-<ol>
-<li>自定义注解(后面通过举例展示)</li>
-</ol>
-<h5 id="按照运行机制"><a href="#按照运行机制" class="headerlink" title="按照运行机制"></a>按照运行机制</h5><ol>
-<li>源码注解    注解只在源码中存在</li>
-</ol>
-<ol>
-<li>编译时注解   注解在源码和.class中均存在</li>
-<li>运行时注解    VM将在运行期也保留注解，可以通过反射机制读取注解的信息</li>
-</ol>
-<h4 id="实战-自动生成MySQL语句"><a href="#实战-自动生成MySQL语句" class="headerlink" title="实战(自动生成MySQL语句)"></a>实战(自动生成MySQL语句)</h4><h5 id="注解的定义"><a href="#注解的定义" class="headerlink" title="注解的定义"></a>注解的定义</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package iMooc;</span><br><span class="line">import ...</span><br><span class="line">@Target(ElementType.TYPE)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">public @interface Table &#123;</span><br><span class="line">    public String value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package iMooc;</span><br><span class="line">import ...</span><br><span class="line">@Target(ElementType.FIELD)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">public @interface Column &#123;</span><br><span class="line">    public String value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注解的定义和接口很像，使用@Interface，内部是元数据，当只有一个元数据是名字应叫做value</p>
-<h5 id="使用注解"><a href="#使用注解" class="headerlink" title="使用注解"></a>使用注解</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package iMooc;</span><br><span class="line">@Table(&quot;user&quot;)</span><br><span class="line">public class Filter &#123;</span><br><span class="line">    @Column(&quot;id&quot;)</span><br><span class="line">    private int id;</span><br><span class="line">    @Column(&quot;user_name&quot;)</span><br><span class="line">    private String Username;</span><br><span class="line">    @Column(&quot;age&quot;)</span><br><span class="line">    private int age;</span><br><span class="line">    public Filter(int id, String username, int age) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        Username = username;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    public Filter()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setId(int id) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    public String getUsername() &#123;</span><br><span class="line">        return Username;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setUsername(String username) &#123;</span><br><span class="line">        Username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="编写注解处理器"><a href="#编写注解处理器" class="headerlink" title="编写注解处理器"></a>编写注解处理器</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        testMooc();</span><br><span class="line">    &#125;</span><br><span class="line">    private static void testMooc() &#123;</span><br><span class="line">        Filter filter=new Filter(1,&quot;不咸&quot;,20);</span><br><span class="line">        System.out.print(query(filter));</span><br><span class="line">    &#125;</span><br><span class="line">    private static String query(Filter filter)&#123;</span><br><span class="line">        StringBuilder sb=new StringBuilder();</span><br><span class="line">        //获得实例的类</span><br><span class="line">        Class c=filter.getClass();</span><br><span class="line">        //判断是否有注解</span><br><span class="line">        boolean exist=c.isAnnotationPresent(Table.class);</span><br><span class="line">        if (!exist) return null;</span><br><span class="line">        //获得注解，在table.value()获得参数</span><br><span class="line">        Table table= (Table) c.getAnnotation(Table.class);</span><br><span class="line">        //拼装MySQL语句</span><br><span class="line">        sb.append(&quot;select * from &quot;).append(table.value()).append(&quot;where 1=1&quot;);</span><br><span class="line">        //获得字段既变量名</span><br><span class="line">        Field[] fArray=c.getDeclaredFields();</span><br><span class="line">        for (Field field:fArray)&#123;</span><br><span class="line">            //根据字段获得表名</span><br><span class="line">            boolean exits=field.isAnnotationPresent(Column.class);</span><br><span class="line">            if (!exist) return null;</span><br><span class="line">            Column column=field.getAnnotation(Column.class);</span><br><span class="line">            String columnName=column.value();</span><br><span class="line">            //获得字段值</span><br><span class="line">            String fieldName=field.getName();</span><br><span class="line">            String methodName=&quot;get&quot;+fieldName.substring(0,1).toUpperCase()+fieldName.substring(1);</span><br><span class="line">            Object value=null;</span><br><span class="line">            try &#123;</span><br><span class="line">                Method method=c.getMethod(methodName);</span><br><span class="line">                value= (Object) method.invoke(filter,null);</span><br><span class="line">            &#125; catch (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            //拼装SQL语句</span><br><span class="line">            if (value!=null)&#123;</span><br><span class="line">                if (value instanceof Integer)</span><br><span class="line">                sb.append(&quot; and &quot;).append(fieldName).append(&quot;=&quot;).append(value);</span><br><span class="line">                else sb.append(&quot; and &quot;).append(fieldName).append(&quot;= &apos;&quot;).append(value).append(&quot;&apos;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="运行后结果"><a href="#运行后结果" class="headerlink" title="运行后结果"></a>运行后结果</h5><p><img src="http://upload-images.jianshu.io/upload_images/5496903-521f0d352f3398e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 
           
         
@@ -1483,7 +1246,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -1494,7 +1257,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">Kategorien</span>
                 
               </div>
