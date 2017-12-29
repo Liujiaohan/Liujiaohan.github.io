@@ -228,6 +228,284 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/30/Java内存模型与线程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/30/Java内存模型与线程/" itemprop="url">Unbenannt</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T00:32:22+08:00">
+                2017-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Java内存模型与线程"><a href="#Java内存模型与线程" class="headerlink" title="Java内存模型与线程"></a>Java内存模型与线程</h1><h2 id="主内存与工作内存"><a href="#主内存与工作内存" class="headerlink" title="主内存与工作内存"></a>主内存与工作内存</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/30/aop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/30/aop/" itemprop="url">Unbenannt</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T00:32:22+08:00">
+                2017-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一、简述"><a href="#一、简述" class="headerlink" title="一、简述"></a>一、简述</h1><h2 id="1-什么是AOP"><a href="#1-什么是AOP" class="headerlink" title="1.什么是AOP"></a>1.什么是AOP</h2><p>AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
+<h2 id="2-什么时候使用AOP"><a href="#2-什么时候使用AOP" class="headerlink" title="2.什么时候使用AOP"></a>2.什么时候使用AOP</h2><p>举个例子：当我们的项目有多个入口时，访问不同的页面都要做用户验证，在不使用AOP时我们可以调用一个专门的方法，来完成需求。但如果很多地方都要求呢？把重复代码再写一遍？后期项目需求又改了？作为一个有追求的程序员这样太不优雅了。不就是在方法前插入一段代码吗？AOP分分钟搞定。除此之外，AOP还可以用于记录日志，计算方法执行时间等等</p>
+<h2 id="3-概念"><a href="#3-概念" class="headerlink" title="3.概念"></a>3.概念</h2><ol>
+<li>通知、增强处理（Advice）：就是你想要的功能，也就是上面说的日志、耗时计算等。</li>
+<li>连接点（JoinPoint）：允许你通知（Advice）的地方，那可就真多了，基本每个方法的前、后（两者都有也行），或抛出异常是时都可以是连接点（spring只支持方法连接点）。AspectJ还可以让你在构造器或属性注入时都行，不过一般情况下不会这么做，只要记住，和方法有关的前前后后都是连接点。</li>
+<li>切入点（Pointcut）：上面说的连接点的基础上，来定义切入点，你的一个类里，有15个方法，那就有十几个连接点了对吧，但是你并不想在所有方法附件都使用通知（使用叫织入，下面再说），你只是想让其中几个，在调用这几个方法之前、之后或者抛出异常时干点什么，那么就用切入点来定义这几个方法，让切点来筛选连接点，选中那几个你想要的方法。</li>
+<li>切面（Aspect）：切面是通知和切入点的结合。现在发现了吧，没连接点什么事，连接点就是为了让你好理解切点搞出来的，明白这个概念就行了。通知说明了干什么和什么时候干（什么时候通过before，after，around等AOP注解就能知道），而切入点说明了在哪干（指定到底是哪个方法），这就是一个完整的切面定义。</li>
+<li>织入（weaving） 把切面应用到目标对象来创建新的代理对象的过程。</li>
+<li>目标对象 – 项目原始的Java组件。</li>
+<li>AOP代理  – 由AOP框架生成java对象。</li>
+<li>AOP代理方法 = advice +　目标对象的方法。</li>
+</ol>
+<h2 id="二-AOP实现方式"><a href="#二-AOP实现方式" class="headerlink" title="二.AOP实现方式"></a>二.AOP实现方式</h2><h3 id="1-AspectJ"><a href="#1-AspectJ" class="headerlink" title="1.AspectJ"></a>1.AspectJ</h3><p>AspectJ: 一个 JavaTM 语言的面向切面编程的无缝扩展（适用Android）</p>
+<h3 id="2-AOP注解与使用"><a href="#2-AOP注解与使用" class="headerlink" title="2.AOP注解与使用"></a>2.AOP注解与使用</h3><p>@Aspect：声明切面，标记类<br>@Pointcut(切点表达式)：定义切点，标记方法<br>@Before(切点表达式)：前置通知，切点之前执行<br>@Around(切点表达式)：环绕通知，切点前后执行<br>@After(切点表达式)：后置通知，切点之后执行<br>@AfterReturning(切点表达式)：返回通知，切点方法返回结果之后执行<br>@AfterThrowing(切点表达式)：异常通知，切点抛出异常时执行  </p>
+<ol>
+<li><p>切点表达式是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">execution(&lt;修饰符模式&gt;? &lt;返回类型模式&gt; &lt;方法名模式&gt;(&lt;参数模式&gt;) &lt;异常模式&gt;?)</span><br><span class="line">举个例子</span><br><span class="line">@Before(&quot;execution(public * *(..))&quot;)</span><br><span class="line">public void before(JoinPoint point) &#123;</span><br><span class="line">    System.out.println(&quot;Before&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@AfterThrowing(value = &quot;execution(* com.lqr..*(..))&quot;, throwing = &quot;ex&quot;)</span><br><span class="line">public void afterThrowing(Throwable ex) &#123;</span><br><span class="line">    System.out.println(&quot;ex = &quot; + ex.getMessage());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>@PointCut的使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Pointcut是专门用来定义切点的，让切点表达式可以复用。</span><br><span class="line">举个例子</span><br><span class="line"></span><br><span class="line">@Pointcut(&quot;execution(public * *(..))&quot;)</span><br><span class="line">public void pointcut() &#123;&#125;</span><br><span class="line"></span><br><span class="line">@Before(&quot;pointcut&quot;)</span><br><span class="line">public void before(JoinPoint point) &#123;</span><br><span class="line">    System.out.println(&quot;Before&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="三、实战"><a href="#三、实战" class="headerlink" title="三、实战"></a>三、实战</h2><p>计算方法耗时</p>
+<h3 id="切面"><a href="#切面" class="headerlink" title="切面"></a>切面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">@org.aspectj.lang.annotation.Aspect</span><br><span class="line">public class Aspect &#123;</span><br><span class="line">    @Pointcut(&quot;execution(public * *(..))&quot;)</span><br><span class="line">    public void pointcut()&#123;&#125;</span><br><span class="line"></span><br><span class="line">    @Around(&quot;pointcut()&quot;)</span><br><span class="line">    public void timer(ProceedingJoinPoint proceedingJoinPoint)throws Throwable&#123;</span><br><span class="line">        System.out.println(&quot;@Around&quot;);</span><br><span class="line">        long beginTime= System.currentTimeMillis();</span><br><span class="line">        proceedingJoinPoint.proceed();</span><br><span class="line">        long endTime=System.currentTimeMillis();</span><br><span class="line">        long dx=endTime-beginTime;</span><br><span class="line">        System.out.println(&quot;耗时：&quot;+dx+&quot;ms&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Before(&quot;pointcut()&quot;)</span><br><span class="line">    public void before(JoinPoint point) &#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;@Before&quot;+point.getTarget());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @After(&quot;pointcut()&quot;)</span><br><span class="line">    public void after(JoinPoint point) &#123;</span><br><span class="line">        System.out.println(&quot;@After&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @AfterReturning(&quot;pointcut()&quot;)</span><br><span class="line">    public void afterReturning(JoinPoint point, Object returnValue) &#123;</span><br><span class="line">        System.out.println(&quot;@AfterReturning&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @AfterThrowing(value = &quot;pointcut()&quot;, throwing = &quot;ex&quot;)</span><br><span class="line">    public void afterThrowing(Throwable ex) &#123;</span><br><span class="line">        System.out.println(&quot;@afterThrowing&quot;);</span><br><span class="line">        System.out.println(&quot;ex = &quot; + ex.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@Around</span><br><span class="line">@Beforenull</span><br><span class="line">@Around</span><br><span class="line">@Beforenull</span><br><span class="line">I am test()</span><br><span class="line">耗时：2ms</span><br><span class="line">@After</span><br><span class="line">@AfterReturning</span><br><span class="line">耗时：4ms</span><br><span class="line">@After</span><br><span class="line">@AfterReturning</span><br></pre></td></tr></table></figure>
+<h2 id="注解切点"><a href="#注解切点" class="headerlink" title="注解切点"></a>注解切点</h2><p>切点表达式的完整结构其实应该是这样的<br>execution(&lt;@注解类型模式&gt;? &lt;修饰符模式&gt;? &lt;返回类型模式&gt; &lt;方法名模式&gt;(&lt;参数模式&gt;) &lt;异常模式&gt;?)</p>
+<ol>
+<li><p>自定义注解</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Target(ElementType.METHOD)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">public @interface AnnoJoinPoint &#123;</span><br><span class="line">    String value();</span><br><span class="line">    int type();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改切点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Pointcut(&quot;execution(@com.bingyanstudio.wireless.aop.AnnoJoinPoint public * *(..))&quot;)</span><br><span class="line">public void pointcut()&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Around</span><br><span class="line">@Beforenull</span><br><span class="line">I am test()耗时：1ms</span><br><span class="line">@After</span><br><span class="line">@AfterReturning</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取注解参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MethodSignature signature = (MethodSignature) joinPoint.getSignature();</span><br><span class="line">Method method = signature.getMethod();</span><br><span class="line">// 通过Method对象得到切点上的注解</span><br><span class="line">AnnoJoinPoint annotation = method.getAnnotation(AnnoJoinPoint.class);</span><br><span class="line">String value = annotation.value();</span><br><span class="line">int type = annotation.type();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -343,6 +621,818 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/reserved/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/13/reserved/" itemprop="url">反编译</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T13:36:00+08:00">
+                2017-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/安卓/" itemprop="url" rel="index">
+                    <span itemprop="name">安卓</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="反编译基础知识"><a href="#反编译基础知识" class="headerlink" title="反编译基础知识"></a>反编译基础知识</h2><h3 id="什么是apk"><a href="#什么是apk" class="headerlink" title="什么是apk"></a>什么是apk</h3><h4 id="APK简介与描述"><a href="#APK简介与描述" class="headerlink" title="APK简介与描述"></a>APK简介与描述</h4><p>APK是AndroidPackage的缩写，即Android安装包(apk)，通过将APK文件直接传到Android模拟器或Android手机中执行即可安装。apk把 android sdk编译的工程打包成一个安装程序文件,格式为apk。APK文件其实是zip格式，但后缀名被修改为apk，直接解压就可以的到Dex等文件。Dex是Dalvik VM executes的全称，即Android Dalvik执行程序，并非Java ME的字节码而是Dalvik字节码。  </p>
+<h4 id="APK文件的组成"><a href="#APK文件的组成" class="headerlink" title="APK文件的组成"></a>APK文件的组成</h4><p>将后缀改为zip直接解压<br><img src="http://img.blog.csdn.net/20170409152301600?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjI3ODMzNzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<ol>
+<li>META-INF目录下存放的是签名信息，用来保证apk包的完整性和系统的安全。编译生成一个apk包时，会对所有要打包的文件做一个校验计算，并把计算结果放在META-INF目录下。这就保证了apk包里的文件不能被随意替换。比如你把其中的一段代码替换或者把资源替换重新导包，基本不可能。  </li>
+<li>res目录存放资源文件，图片字符串等等</li>
+<li>lib目录下的子目录armeabi存放的是一些so文件。如果是用SDK和NDK开发的话，这部分很重要，甚至可以通过把一些不是so文件的文件通过改名打包到apk中.</li>
+<li>classes.dex 是java源码编译后生成的java字节码文件（首先是java文件通过jdk编译成字节码文件然后经过dex后编译成classes.dex。</li>
+<li>resources.arsc是编译后的二进制资源文件的索引(apk文件的资源表(索引))</li>
+<li>assets目录可以存放一些配置文件和资源，它们在编译是可以通过系统提供的api调用得到</li>
+<li>AndroidMainifast.xml是程序全局配置文件</li>
+</ol>
+<h3 id="从Java源码到apk"><a href="#从Java源码到apk" class="headerlink" title="从Java源码到apk"></a>从Java源码到apk</h3><p><img src="http://img.blog.csdn.net/20170409150023349?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjI3ODMzNzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="从Java源码到apk过程">  </p>
+<ol>
+<li>aapt即Android Asset Packaging Tool , 在SDK的tools/目录下. 该工具可以查看, 创建, 更新ZIP格式的文档附件(zip, jar, apk). 也可将资源文件编译成二进制文件.给你的Activity提供所需的资源文件如AndroidManifest.xml，XML文件,并编译它们。同时产生R.java文件，使你可以在java代码中引用这些资源。</li>
+<li>aidl工具把.aidl接口转换成Java接口。  </li>
+<li>你所有的Java代码,包括 R.java和 .aidl文件,由Java编译器和编译输出.class文件。  </li>
+<li>dex工具把.class文件转换成Dalvik字节文件，第三方的类和.class也被转换成.dex文件  </li>
+<li>编译好的dex文件以及编译过的资源和一些其他资源被送到apkbuilder编译成apk  </li>
+<li>决定生成Debug还是Release版本，release需要签名和keystore  </li>
+<li>如果选择release版本，还需要使用zipalign工具对apk对齐。齐处理即使得所有资源文件距离文件起始偏移为4字节的整数倍，这样通过内存映射访问apk文件时处理速度更快<h2 id="开始反编译"><a href="#开始反编译" class="headerlink" title="开始反编译"></a>开始反编译</h2><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/Java零碎知识点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/13/Java零碎知识点/" itemprop="url">Java零碎知识点</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T13:36:00+08:00">
+                2017-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Java零碎知识点"><a href="#Java零碎知识点" class="headerlink" title="Java零碎知识点"></a>Java零碎知识点</h1><h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><h4 id="final类"><a href="#final类" class="headerlink" title="final类"></a>final类</h4><p><a href="&quot;http://yqgao.blog.51cto.com/773490/170194&quot;">链接</a></p>
+<p>即final类不能被继承，不能被覆盖，以及final类在执行速度方面比一般类快</p>
+<h4 id="final参数"><a href="#final参数" class="headerlink" title="final参数"></a>final参数</h4><p>final参数的含义如同final变量一样，是常数参数，即当方法接受了这个参数后，其值不能改变。在函数中开匿名内部类需要定义为final</p>
+<h4 id="final方法"><a href="#final方法" class="headerlink" title="final方法"></a>final方法</h4><p>final方法不能被子类覆盖</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/Java注解全解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/13/Java注解全解/" itemprop="url">Java注解全解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T13:29:00+08:00">
+                2017-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Java注解全解"><a href="#Java注解全解" class="headerlink" title="Java注解全解"></a>Java注解全解</h1><h4 id="什么是Java注解？"><a href="#什么是Java注解？" class="headerlink" title="什么是Java注解？"></a>什么是Java注解？</h4><p>注解(也被成为元数据)为我们在代码中添加信息提供一种形式化的方法，使我们在稍后某个地方可以方便地使用这些数据(如使用反射的方法使用)。</p>
+<p>推荐一个简单易懂的教程</p>
+<p><a href="http://www.imooc.com/learn/456" target="_blank" rel="noopener">慕课网全面解析Java注解</a></p>
+<h4 id="注解的分类"><a href="#注解的分类" class="headerlink" title="注解的分类"></a>注解的分类</h4><h5 id="按来源"><a href="#按来源" class="headerlink" title="按来源"></a>按来源</h5><ol>
+<li><p>标准注解  </p>
+<p>@Override  表示当前的方法将覆盖超类的方法</p>
+<p>@Deprecated 中文意思是弃用，如果在其他地方使用了为它的元素，那么编译器会发出警告信息</p>
+<p>@SuppressWarnings 关闭编译器的警告信息，如你使用了被@Deprecated的元素，可以用此注解关闭警告的信息</p>
+<p>​    </p>
+</li>
+<li><p>元注解(即注解的注解在自定义注解中会用到)</p>
+<p>@Target 表示该注解可以用于什么地方 可能的参数有</p>
+<ul>
+<li>ElementType.CONSTRUCTOR:构造器的声明</li>
+<li>ElementType.FIELD：域声明</li>
+<li>ElementType.LOCAL_VARIABLE：局部变量声明</li>
+<li>ElementType.METHOD：方法声明</li>
+<li>ElementType.PACAKAGE：包声明</li>
+<li>ElementType.PARAMENTER：参数声明</li>
+<li>ElementType.TYPE：类、接口、enum声明</li>
+</ul>
+<p>@Retention 表示需要在什么时候在什么时候保存该编译信息</p>
+<ul>
+<li>SOURCE 将被编译器弃用</li>
+<li>CLASS 在class中可用，但会被VM弃用</li>
+<li>RUNTIME 在运行期间也保留注解，因此可以通过反射机制读取注解的信息</li>
+</ul>
+<p>@Documented</p>
+<ul>
+<li>该注解包含在Javadoc中</li>
+</ul>
+<p>@Inherited</p>
+<ul>
+<li>允许子类继承父类的注解</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>自定义注解(后面通过举例展示)</li>
+</ol>
+<h5 id="按照运行机制"><a href="#按照运行机制" class="headerlink" title="按照运行机制"></a>按照运行机制</h5><ol>
+<li>源码注解    注解只在源码中存在</li>
+</ol>
+<ol>
+<li>编译时注解   注解在源码和.class中均存在</li>
+<li>运行时注解    VM将在运行期也保留注解，可以通过反射机制读取注解的信息</li>
+</ol>
+<h4 id="实战-自动生成MySQL语句"><a href="#实战-自动生成MySQL语句" class="headerlink" title="实战(自动生成MySQL语句)"></a>实战(自动生成MySQL语句)</h4><h5 id="注解的定义"><a href="#注解的定义" class="headerlink" title="注解的定义"></a>注解的定义</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package iMooc;</span><br><span class="line">import ...</span><br><span class="line">@Target(ElementType.TYPE)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">public @interface Table &#123;</span><br><span class="line">    public String value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">package iMooc;</span><br><span class="line">import ...</span><br><span class="line">@Target(ElementType.FIELD)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">public @interface Column &#123;</span><br><span class="line">    public String value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注解的定义和接口很像，使用@Interface，内部是元数据，当只有一个元数据是名字应叫做value</p>
+<h5 id="使用注解"><a href="#使用注解" class="headerlink" title="使用注解"></a>使用注解</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package iMooc;</span><br><span class="line">@Table(&quot;user&quot;)</span><br><span class="line">public class Filter &#123;</span><br><span class="line">    @Column(&quot;id&quot;)</span><br><span class="line">    private int id;</span><br><span class="line">    @Column(&quot;user_name&quot;)</span><br><span class="line">    private String Username;</span><br><span class="line">    @Column(&quot;age&quot;)</span><br><span class="line">    private int age;</span><br><span class="line">    public Filter(int id, String username, int age) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">        Username = username;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    public Filter()&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getId() &#123;</span><br><span class="line">        return id;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setId(int id) &#123;</span><br><span class="line">        this.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    public String getUsername() &#123;</span><br><span class="line">        return Username;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setUsername(String username) &#123;</span><br><span class="line">        Username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="编写注解处理器"><a href="#编写注解处理器" class="headerlink" title="编写注解处理器"></a>编写注解处理器</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        testMooc();</span><br><span class="line">    &#125;</span><br><span class="line">    private static void testMooc() &#123;</span><br><span class="line">        Filter filter=new Filter(1,&quot;不咸&quot;,20);</span><br><span class="line">        System.out.print(query(filter));</span><br><span class="line">    &#125;</span><br><span class="line">    private static String query(Filter filter)&#123;</span><br><span class="line">        StringBuilder sb=new StringBuilder();</span><br><span class="line">        //获得实例的类</span><br><span class="line">        Class c=filter.getClass();</span><br><span class="line">        //判断是否有注解</span><br><span class="line">        boolean exist=c.isAnnotationPresent(Table.class);</span><br><span class="line">        if (!exist) return null;</span><br><span class="line">        //获得注解，在table.value()获得参数</span><br><span class="line">        Table table= (Table) c.getAnnotation(Table.class);</span><br><span class="line">        //拼装MySQL语句</span><br><span class="line">        sb.append(&quot;select * from &quot;).append(table.value()).append(&quot;where 1=1&quot;);</span><br><span class="line">        //获得字段既变量名</span><br><span class="line">        Field[] fArray=c.getDeclaredFields();</span><br><span class="line">        for (Field field:fArray)&#123;</span><br><span class="line">            //根据字段获得表名</span><br><span class="line">            boolean exits=field.isAnnotationPresent(Column.class);</span><br><span class="line">            if (!exist) return null;</span><br><span class="line">            Column column=field.getAnnotation(Column.class);</span><br><span class="line">            String columnName=column.value();</span><br><span class="line">            //获得字段值</span><br><span class="line">            String fieldName=field.getName();</span><br><span class="line">            String methodName=&quot;get&quot;+fieldName.substring(0,1).toUpperCase()+fieldName.substring(1);</span><br><span class="line">            Object value=null;</span><br><span class="line">            try &#123;</span><br><span class="line">                Method method=c.getMethod(methodName);</span><br><span class="line">                value= (Object) method.invoke(filter,null);</span><br><span class="line">            &#125; catch (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            //拼装SQL语句</span><br><span class="line">            if (value!=null)&#123;</span><br><span class="line">                if (value instanceof Integer)</span><br><span class="line">                sb.append(&quot; and &quot;).append(fieldName).append(&quot;=&quot;).append(value);</span><br><span class="line">                else sb.append(&quot; and &quot;).append(fieldName).append(&quot;= &apos;&quot;).append(value).append(&quot;&apos;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行后结果"><a href="#运行后结果" class="headerlink" title="运行后结果"></a>运行后结果</h5><p><img src="http://upload-images.jianshu.io/upload_images/5496903-521f0d352f3398e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/todo-mvp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/todo-mvp/" itemprop="url">从google的todo学习MVP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/安卓/" itemprop="url" rel="index">
+                    <span itemprop="name">安卓</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://github.com/googlesamples/android-architecture/tree/todo-mvp/" target="_blank" rel="noopener">todo-mvp</a></p>
+<h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2><h3 id="什么是todo"><a href="#什么是todo" class="headerlink" title="什么是todo?"></a>什么是todo?</h3><p>todo就是简单的记事app<br><img src="http://img.blog.csdn.net/20170705170010018?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjI3ODMzNzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="什么是MVP"><a href="#什么是MVP" class="headerlink" title="什么是MVP?"></a>什么是MVP?</h3><p>网上有很多概念，我也看了很多，一直只有一个模糊的印象。最近通过分析和模仿todo-mvp写了个demo有了完全不同的理解。<br>Model：提供数据，从本地或从云端<br>View：View即视图<br>Presenter：负责逻辑的处理，从Model中取数据，然后处理，传给View层，View将其展示</p>
+<h2 id="开始分析todo-MVP"><a href="#开始分析todo-MVP" class="headerlink" title="开始分析todo-MVP"></a>开始分析todo-MVP</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="http://img.blog.csdn.net/20170705170436793?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjI3ODMzNzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="项目结构"><br>data包为整个app提供数据包括local和remote，local包下就是封装了对数据库的操作，这里我们重点关注的是TasksRepository，它封装了数据的获取，从本地或者云端。<br>tasks包和taskdetail以及addedittask打开后结构是一样的，都包含一个activity一个fragment一个contract一个presener，所以我们只以task包为例分析，既最上面的那张图。<br>先来看看各个不同的包和不同的接口是怎么配合的。<br>Repository为M，Presenter为P，View为V<br><img src="http://img.blog.csdn.net/20170705171000991?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjI3ODMzNzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="MVP"><br>在这之前我们先来说说接口BaseView和BasePresenter，BaseView中只有一个setPresenter()，BasePresenter只有一个star()<br>然后看看TasksContract`</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public interface TasksContract &#123;</span><br><span class="line"></span><br><span class="line">    interface View extends BaseView&lt;Presenter&gt; &#123;</span><br><span class="line"></span><br><span class="line">        ....</span><br><span class="line"></span><br><span class="line">        void showTasks(List&lt;Task&gt; tasks);</span><br><span class="line"></span><br><span class="line">        void showLoadingTasksError();</span><br><span class="line"></span><br><span class="line">        void showNoTasks();</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    interface Presenter extends BasePresenter &#123;</span><br><span class="line">        ....</span><br><span class="line"></span><br><span class="line">        void loadTasks(boolean forceUpdate);</span><br><span class="line"></span><br><span class="line">        void openTaskDetails(@NonNull Task requestedTask);</span><br><span class="line"></span><br><span class="line">        void clearCompletedTasks();</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>contract中有两个接口分别实现BaseView和BasePresenter，Presenter中在加入在Tasks中可能发生的操作，BaseView中加入View的响应操作。</p>
+<h3 id="View"><a href="#View" class="headerlink" title="View"></a>View</h3><p>接下来看看Fragment即View</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public class TasksFragment extends Fragment implements TasksContract.View &#123;</span><br><span class="line">    ....</span><br><span class="line">    private TasksContract.Presenter mPresenter;</span><br><span class="line">    @Override</span><br><span class="line">    public void onResume() &#123;</span><br><span class="line">        super.onResume();</span><br><span class="line">        mPresenter.start();</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void setPresenter(@NonNull TasksContract.Presenter presenter) &#123;</span><br><span class="line">        mPresenter = checkNotNull(presenter);</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void showTasks(List&lt;Task&gt; tasks) &#123;</span><br><span class="line">        mListAdapter.replaceData(tasks);</span><br><span class="line"></span><br><span class="line">        mTasksView.setVisibility(View.VISIBLE);</span><br><span class="line">        mNoTasksView.setVisibility(View.GONE);</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void showNoTasks() &#123;</span><br><span class="line">        showNoTasksViews(</span><br><span class="line">                getResources().getString(R.string.no_tasks_all),</span><br><span class="line">                R.drawable.ic_assignment_turned_in_24dp,</span><br><span class="line">                false</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void showNoTasksViews(String mainText, int iconRes, boolean showAddView) &#123;</span><br><span class="line">        mTasksView.setVisibility(View.GONE);</span><br><span class="line">        mNoTasksView.setVisibility(View.VISIBLE);</span><br><span class="line"></span><br><span class="line">        mNoTaskMainView.setText(mainText);</span><br><span class="line">        mNoTaskIcon.setImageDrawable(getResources().getDrawable(iconRes));</span><br><span class="line">        mNoTaskAddView.setVisibility(showAddView ? View.VISIBLE : View.GONE);</span><br><span class="line">    &#125;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意在OnResume中调用了star(),一般就是从Repository中获取数据，View层根据接口返回的数据进行UI操作，同时根据监听事件调用Presenter相应的方法(presenter中有对View接口的引用，之后会回调)</p>
+<h3 id="Presenter"><a href="#Presenter" class="headerlink" title="Presenter"></a>Presenter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line">public class TasksPresenter implements TasksContract.Presenter &#123;</span><br><span class="line">....</span><br><span class="line">    private final TasksRepository mTasksRepository;</span><br><span class="line"></span><br><span class="line">    private final TasksContract.View mTasksView;</span><br><span class="line"></span><br><span class="line">    public TasksPresenter(@NonNull TasksRepository tasksRepository, @NonNull TasksContract.View tasksView) &#123;</span><br><span class="line">        mTasksRepository = checkNotNull(tasksRepository, &quot;tasksRepository cannot be null&quot;);</span><br><span class="line">        mTasksView = checkNotNull(tasksView, &quot;tasksView cannot be null!&quot;);</span><br><span class="line"></span><br><span class="line">        mTasksView.setPresenter(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void start() &#123;</span><br><span class="line">        loadTasks(false);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void loadTasks(boolean forceUpdate) &#123;</span><br><span class="line">        // Simplification for sample: a network reload will be forced on first load.</span><br><span class="line">        loadTasks(forceUpdate || mFirstLoad, true);</span><br><span class="line">        mFirstLoad = false;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void loadTasks(boolean forceUpdate, final boolean showLoadingUI) &#123;</span><br><span class="line">        if (showLoadingUI) &#123;</span><br><span class="line">            mTasksView.setLoadingIndicator(true);</span><br><span class="line">        &#125;</span><br><span class="line">        if (forceUpdate) &#123;</span><br><span class="line">            mTasksRepository.refreshTasks();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // The network request might be handled in a different thread so make sure Espresso knows</span><br><span class="line">        // that the app is busy until the response is handled.</span><br><span class="line">        EspressoIdlingResource.increment(); // App is busy until further notice</span><br><span class="line"></span><br><span class="line">        mTasksRepository.getTasks(new TasksDataSource.LoadTasksCallback() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onTasksLoaded(List&lt;Task&gt; tasks) &#123;</span><br><span class="line">                List&lt;Task&gt; tasksToShow = new ArrayList&lt;Task&gt;();</span><br><span class="line"></span><br><span class="line">                // This callback may be called twice, once for the cache and once for loading</span><br><span class="line">                // the data from the server API, so we check before decrementing, otherwise</span><br><span class="line">                // it throws &quot;Counter has been corrupted!&quot; exception.</span><br><span class="line">                if (!EspressoIdlingResource.getIdlingResource().isIdleNow()) &#123;</span><br><span class="line">                    EspressoIdlingResource.decrement(); // Set app as idle.</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                // We filter the tasks based on the requestType</span><br><span class="line">                for (Task task : tasks) &#123;</span><br><span class="line">                    switch (mCurrentFiltering) &#123;</span><br><span class="line">                        case ALL_TASKS:</span><br><span class="line">                            tasksToShow.add(task);</span><br><span class="line">                            break;</span><br><span class="line">                        case ACTIVE_TASKS:</span><br><span class="line">                            if (task.isActive()) &#123;</span><br><span class="line">                                tasksToShow.add(task);</span><br><span class="line">                            &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        case COMPLETED_TASKS:</span><br><span class="line">                            if (task.isCompleted()) &#123;</span><br><span class="line">                                tasksToShow.add(task);</span><br><span class="line">                            &#125;</span><br><span class="line">                            break;</span><br><span class="line">                        default:</span><br><span class="line">                            tasksToShow.add(task);</span><br><span class="line">                            break;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                // The view may not be able to handle UI updates anymore</span><br><span class="line">                if (!mTasksView.isActive()) &#123;</span><br><span class="line">                    return;</span><br><span class="line">                &#125;</span><br><span class="line">                if (showLoadingUI) &#123;</span><br><span class="line">                    mTasksView.setLoadingIndicator(false);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                processTasks(tasksToShow);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void onDataNotAvailable() &#123;</span><br><span class="line">                // The view may not be able to handle UI updates anymore</span><br><span class="line">                if (!mTasksView.isActive()) &#123;</span><br><span class="line">                    return;</span><br><span class="line">                &#125;</span><br><span class="line">                mTasksView.showLoadingTasksError();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void openTaskDetails(@NonNull Task requestedTask) &#123;</span><br><span class="line">        checkNotNull(requestedTask, &quot;requestedTask cannot be null!&quot;);</span><br><span class="line">        mTasksView.showTaskDetailsUi(requestedTask.getId());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void completeTask(@NonNull Task completedTask) &#123;</span><br><span class="line">        checkNotNull(completedTask, &quot;completedTask cannot be null!&quot;);</span><br><span class="line">        mTasksRepository.completeTask(completedTask);</span><br><span class="line">        mTasksView.showTaskMarkedComplete();</span><br><span class="line">        loadTasks(false, false);</span><br><span class="line">    &#125;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在TasksPresenter中在实例化的时候持有了对Repository和TaskContract.View的引用，并且调用setPresenter()给TasksContract.View设置Presenter。当View层调用Presenter的方法时他进行相应的对Repository的操作，完成后根据情况回调TaskContract.View的相应方法。</p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>首先我们先想想需要对数据做什么操作，就todo而言，一般就是需要获取Tasks，删除Task等等，所以我们先抽象出一个接口集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public interface TasksDataSource &#123;</span><br><span class="line">    ....</span><br><span class="line">    interface LoadTasksCallback &#123;</span><br><span class="line">        void onTasksLoaded(List&lt;Task&gt; tasks);</span><br><span class="line">        void onDataNotAvailable();</span><br><span class="line">    &#125;</span><br><span class="line">    interface GetTaskCallback &#123;</span><br><span class="line">        void onTaskLoaded(Task task);</span><br><span class="line">        void onDataNotAvailable();</span><br><span class="line">    &#125;</span><br><span class="line">    void getTasks(@NonNull LoadTasksCallback callback);</span><br><span class="line">    void getTask(@NonNull String taskId, @NonNull GetTaskCallback callback);</span><br><span class="line">    void saveTask(@NonNull Task task);</span><br><span class="line">    void deleteAllTasks();</span><br><span class="line">    void deleteTask(@NonNull String taskId);</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>内部的两个接口是用来将数据回调到外部的，现在来看看repository的实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">public class TasksRepository implements TasksDataSource &#123;</span><br><span class="line">    ....</span><br><span class="line">    private static TasksRepository INSTANCE = null;</span><br><span class="line">    private final TasksDataSource mTasksRemoteDataSource;</span><br><span class="line">    private final TasksDataSource mTasksLocalDataSource;</span><br><span class="line">    private TasksRepository(@NonNull TasksDataSource tasksRemoteDataSource,</span><br><span class="line">                            @NonNull TasksDataSource tasksLocalDataSource) &#123;</span><br><span class="line">        mTasksRemoteDataSource = checkNotNull(tasksRemoteDataSource);</span><br><span class="line">        mTasksLocalDataSource = checkNotNull(tasksLocalDataSource);</span><br><span class="line">    &#125;</span><br><span class="line">    public static TasksRepository getInstance(TasksDataSource tasksRemoteDataSource,</span><br><span class="line">                                              TasksDataSource tasksLocalDataSource) &#123;</span><br><span class="line">        if (INSTANCE == null) &#123;</span><br><span class="line">            INSTANCE = new TasksRepository(tasksRemoteDataSource, tasksLocalDataSource);</span><br><span class="line">        &#125;</span><br><span class="line">        return INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void getTasks(@NonNull final LoadTasksCallback callback) &#123;</span><br><span class="line">        checkNotNull(callback);</span><br><span class="line">        if (mCachedTasks != null &amp;&amp; !mCacheIsDirty) &#123;</span><br><span class="line">            callback.onTasksLoaded(new ArrayList&lt;&gt;(mCachedTasks.values()));</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        if (mCacheIsDirty) &#123;</span><br><span class="line">            getTasksFromRemoteDataSource(callback);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            mTasksLocalDataSource.getTasks(new LoadTasksCallback() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public void onTasksLoaded(List&lt;Task&gt; tasks) &#123;</span><br><span class="line">                    refreshCache(tasks);</span><br><span class="line">                    callback.onTasksLoaded(new ArrayList&lt;&gt;(mCachedTasks.values()));</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                @Override</span><br><span class="line">                public void onDataNotAvailable() &#123;</span><br><span class="line">                    getTasksFromRemoteDataSource(callback);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void saveTask(@NonNull Task task) &#123;</span><br><span class="line">        checkNotNull(task);</span><br><span class="line">        mTasksRemoteDataSource.saveTask(task);</span><br><span class="line">        mTasksLocalDataSource.saveTask(task);</span><br><span class="line">        if (mCachedTasks == null) &#123;</span><br><span class="line">            mCachedTasks = new LinkedHashMap&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        mCachedTasks.put(task.getId(), task);</span><br><span class="line">    &#125;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从以上可知Repository中，它的作用是给Presenter提供数据，而它来处理从缓存还是从本地数据库或者从网络请求的逻辑操作，它持有一个TasksLocalDataSource和TasksRemoteDataSource的引用，而真正对数据库和网络数据操作的的就是TasksLocalDataSource和TasksRemoteDataSource，他们同样实现了接口TasksDataSource，具体代码可以打开链接查看。</p>
+<p>最后我们再来理一下各个类间的关系，TasksPresenter持有TasksContract.View和Repository的引用，实现了TasksContract.View的Fragment持有Presenter的引用，Repository持有TasksLocalDataSoure和TasksRemoteDataSource的引用。</p>
+<p>最后我们需要一个Activity来把这所有东西调动以来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class TasksActivity extends AppCompatActivity &#123;</span><br><span class="line">    private TasksPresenter mTasksPresenter;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.tasks_act);</span><br><span class="line">        TasksFragment tasksFragment =</span><br><span class="line">                (TasksFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);</span><br><span class="line">        if (tasksFragment == null) &#123;</span><br><span class="line">            // Create the fragment</span><br><span class="line">            tasksFragment = TasksFragment.newInstance();</span><br><span class="line">            ActivityUtils.addFragmentToActivity(</span><br><span class="line">                    getSupportFragmentManager(), tasksFragment, R.id.contentFrame);</span><br><span class="line">        &#125;</span><br><span class="line">        // Create the presenter</span><br><span class="line">        mTasksPresenter = new TasksPresenter(       Injection.provideTasksRepository(getApplicationContext()), tasksFragment);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在整个MVP就完整了。第一次认真写博客，请多包涵。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/04/git/" itemprop="url">git的基本使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-04T12:26:49+08:00">
+                2017-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tool/" itemprop="url" rel="index">
+                    <span itemprop="name">tool</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="git-的基本使用"><a href="#git-的基本使用" class="headerlink" title="git 的基本使用"></a>git 的基本使用</h1><ol>
+<li><a href="http://pan.baidu.com/s/1dFGIplJ" target="_blank" rel="noopener">http://pan.baidu.com/s/1dFGIplJ</a> 不用谢，只要打开一直点就好了</li>
+<li>先在github上创建一个仓库 得到仓库地址<a href="https://github.com/*******/-" target="_blank" rel="noopener">https://github.com/*******/-</a></li>
+<li>找到你要上传的projects然后右键就会出现git bush,git gui，选git bush </li>
+<li>git init 初始化  git add . 添加全部<br><img src="http://img.blog.csdn.net/20170403001736707?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjI3ODMzNzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
+<li>git remote add origin “<a href="https://github.com/*******/-" target="_blank" rel="noopener">https://github.com/*******/-</a>“  设置远程仓库</li>
+<li>git commit -m “First commit”  记录</li>
+<li>git push origin master<br><img src="http://img.blog.csdn.net/20170403002744183?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjI3ODMzNzE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>git 还有许多命令,git clone啊git pull等等，这只是最简单的把本地代码同步到github上!</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -393,12 +1483,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">Kategorien</span>
+                
+              </div>
             
 
             

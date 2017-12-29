@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="自动内存管理机制Java内存区域 程序计数器：线程私有，当前线程锁执行的字节码的行号指示器 Java虚拟机栈：线程私有，它的生命周期与线程相同，Java方法在执行时创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。方法的调用和执行完成对应栈帧的出入 本地方法栈：相当于native方法的Java虚拟机栈 Java堆：所有线程共享，存放对象实例 方法区：线程共享，储存已被虚拟机加载的">
+<meta name="description" content="1234title:  自动内存管理机制date: 2017-10-11 13:33categories: Java   toc: true 自动内存管理机制Java内存区域 程序计数器：线程私有，当前线程锁执行的字节码的行号指示器 Java虚拟机栈：线程私有，它的生命周期与线程相同，Java方法在执行时创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。方法的调用和执行完成对应栈">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nosalt">
-<meta property="og:url" content="http://yoursite.com/2017/12/30/深入理解JAVA虚拟机(一)/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/12/30/自动管理内存机制/index.html">
 <meta property="og:site_name" content="nosalt">
-<meta property="og:description" content="自动内存管理机制Java内存区域 程序计数器：线程私有，当前线程锁执行的字节码的行号指示器 Java虚拟机栈：线程私有，它的生命周期与线程相同，Java方法在执行时创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。方法的调用和执行完成对应栈帧的出入 本地方法栈：相当于native方法的Java虚拟机栈 Java堆：所有线程共享，存放对象实例 方法区：线程共享，储存已被虚拟机加载的">
-<meta property="og:updated_time" content="2017-10-07T12:32:47.000Z">
+<meta property="og:description" content="1234title:  自动内存管理机制date: 2017-10-11 13:33categories: Java   toc: true 自动内存管理机制Java内存区域 程序计数器：线程私有，当前线程锁执行的字节码的行号指示器 Java虚拟机栈：线程私有，它的生命周期与线程相同，Java方法在执行时创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。方法的调用和执行完成对应栈">
+<meta property="og:updated_time" content="2017-10-21T11:13:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nosalt">
-<meta name="twitter:description" content="自动内存管理机制Java内存区域 程序计数器：线程私有，当前线程锁执行的字节码的行号指示器 Java虚拟机栈：线程私有，它的生命周期与线程相同，Java方法在执行时创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。方法的调用和执行完成对应栈帧的出入 本地方法栈：相当于native方法的Java虚拟机栈 Java堆：所有线程共享，存放对象实例 方法区：线程共享，储存已被虚拟机加载的">
+<meta name="twitter:description" content="1234title:  自动内存管理机制date: 2017-10-11 13:33categories: Java   toc: true 自动内存管理机制Java内存区域 程序计数器：线程私有，当前线程锁执行的字节码的行号指示器 Java虚拟机栈：线程私有，它的生命周期与线程相同，Java方法在执行时创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。方法的调用和执行完成对应栈">
 
 
 
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/30/深入理解JAVA虚拟机(一)/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/30/自动管理内存机制/"/>
 
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/30/深入理解JAVA虚拟机(一)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/30/自动管理内存机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -260,7 +260,7 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T00:32:22+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T00:42:41+08:00">
                 2017-12-30
               </time>
             
@@ -298,7 +298,8 @@
       
 
       
-        <h1 id="自动内存管理机制"><a href="#自动内存管理机制" class="headerlink" title="自动内存管理机制"></a>自动内存管理机制</h1><h2 id="Java内存区域"><a href="#Java内存区域" class="headerlink" title="Java内存区域"></a>Java内存区域</h2><ul>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title:  自动内存管理机制</span><br><span class="line">date: 2017-10-11 13:33</span><br><span class="line">categories: Java   </span><br><span class="line">toc: true</span><br></pre></td></tr></table></figure>
+<h1 id="自动内存管理机制"><a href="#自动内存管理机制" class="headerlink" title="自动内存管理机制"></a>自动内存管理机制</h1><h2 id="Java内存区域"><a href="#Java内存区域" class="headerlink" title="Java内存区域"></a>Java内存区域</h2><ul>
 <li>程序计数器：线程私有，当前线程锁执行的字节码的行号指示器</li>
 <li>Java虚拟机栈：线程私有，它的生命周期与线程相同，Java方法在执行时创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。方法的调用和执行完成对应栈帧的出入</li>
 <li>本地方法栈：相当于native方法的Java虚拟机栈</li>
@@ -420,7 +421,7 @@
 <li>大对象直接进入老年代</li>
 <li>长期存活的对象将进入老年代</li>
 <li>动态对象年龄判断：如果在Survivor空间中相同年龄所有的对象大小的总和大于Survivor空间的一半，年龄大于或等于该年龄的对象就可以直接进入老年代</li>
-<li>空间分配担保：只要老年代的连续空间大于新生代对象总大小或者历次晋升的平均大小就会进行MirrorGC，否则进行Full GC</li>
+<li>空间分配担保：只要老年代的连续空间大于新生代对象总大小或者历次晋升的平均大小就会进行MirrorGC，否则进行Full GC1</li>
 </ul>
 
       
@@ -446,7 +447,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/30/程序组新人任务(一)/" rel="next" title="">
+              <a href="/2017/12/30/线程间协作-《thinking in java》读书笔记（一）/" rel="next" title="">
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -456,7 +457,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/30/虚拟机字节码引擎/" rel="prev" title="">
+              <a href="/2017/12/30/虚拟机类加载机制/" rel="prev" title="">
                  <i class="fa fa-chevron-right"></i>
               </a>
             
