@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="虚拟机字节码引擎运行时栈帧结构每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈  局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域 操作数栈：字节码指令栈 动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用 方法返回地址：返回个下一个栈帧  方法调用 解析   invokestatic:调用静态方法 invokespecial：调用实例构">
+<meta name="description" content="虚拟机类加载机制类加载的时间类被加载到虚拟机内存中开始，到卸载出内存位置，生命周期包括Loading(加载)、Verification(验证)、Preparetion(准备)、Resolution(解析)、Initialzation(初始化)、Using(使用)、Unloading(卸载)。其中Loading、Verification、Preparation、Initialzation、Unloa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虚拟机字节码引擎">
-<meta property="og:url" content="http://yoursite.com/2017/07/05/虚拟机字节码引擎/index.html">
+<meta property="og:title" content="虚拟机类加载机制">
+<meta property="og:url" content="http://yoursite.com/2017/10/11/虚拟机类加载机制/index.html">
 <meta property="og:site_name" content="nosalt">
-<meta property="og:description" content="虚拟机字节码引擎运行时栈帧结构每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈  局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域 操作数栈：字节码指令栈 动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用 方法返回地址：返回个下一个栈帧  方法调用 解析   invokestatic:调用静态方法 invokespecial：调用实例构">
-<meta property="og:updated_time" content="2017-12-29T16:52:59.134Z">
+<meta property="og:description" content="虚拟机类加载机制类加载的时间类被加载到虚拟机内存中开始，到卸载出内存位置，生命周期包括Loading(加载)、Verification(验证)、Preparetion(准备)、Resolution(解析)、Initialzation(初始化)、Using(使用)、Unloading(卸载)。其中Loading、Verification、Preparation、Initialzation、Unloa">
+<meta property="og:image" content="http://img.blog.csdn.net/20160506184936657">
+<meta property="og:updated_time" content="2017-12-29T16:59:03.917Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="虚拟机字节码引擎">
-<meta name="twitter:description" content="虚拟机字节码引擎运行时栈帧结构每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈  局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域 操作数栈：字节码指令栈 动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用 方法返回地址：返回个下一个栈帧  方法调用 解析   invokestatic:调用静态方法 invokespecial：调用实例构">
+<meta name="twitter:title" content="虚拟机类加载机制">
+<meta name="twitter:description" content="虚拟机类加载机制类加载的时间类被加载到虚拟机内存中开始，到卸载出内存位置，生命周期包括Loading(加载)、Verification(验证)、Preparetion(准备)、Resolution(解析)、Initialzation(初始化)、Using(使用)、Unloading(卸载)。其中Loading、Verification、Preparation、Initialzation、Unloa">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160506184936657">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/05/虚拟机字节码引擎/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/11/虚拟机类加载机制/"/>
 
 
 
 
 
-  <title>虚拟机字节码引擎 | nosalt</title>
+  <title>虚拟机类加载机制 | nosalt</title>
   
 
 
@@ -231,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/虚拟机字节码引擎/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/虚拟机类加载机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -248,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">虚拟机字节码引擎</h1>
+          <h1 class="post-title" itemprop="name headline">虚拟机类加载机制</h1>
         
 
         <div class="post-meta">
@@ -260,8 +262,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
-                2017-07-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-11T13:33:00+08:00">
+                2017-10-11
               </time>
             
 
@@ -320,55 +322,77 @@
       
 
       
-        <h1 id="虚拟机字节码引擎"><a href="#虚拟机字节码引擎" class="headerlink" title="虚拟机字节码引擎"></a>虚拟机字节码引擎</h1><h2 id="运行时栈帧结构"><a href="#运行时栈帧结构" class="headerlink" title="运行时栈帧结构"></a>运行时栈帧结构</h2><p>每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈</p>
+        <h1 id="虚拟机类加载机制"><a href="#虚拟机类加载机制" class="headerlink" title="虚拟机类加载机制"></a>虚拟机类加载机制</h1><h2 id="类加载的时间"><a href="#类加载的时间" class="headerlink" title="类加载的时间"></a>类加载的时间</h2><p>类被加载到虚拟机内存中开始，到卸载出内存位置，生命周期包括Loading(加载)、Verification(验证)、Preparetion(准备)、Resolution(解析)、Initialzation(初始化)、Using(使用)、Unloading(卸载)。其中Loading、Verification、Preparation、Initialzation、Unload的顺序是固定的、解析则不固定。</p>
+<h2 id="类加载过程"><a href="#类加载过程" class="headerlink" title="类加载过程"></a>类加载过程</h2><ul>
+<li><p>Loading</p>
 <ul>
-<li>局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域</li>
-<li>操作数栈：字节码指令栈</li>
-<li>动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用</li>
-<li>方法返回地址：返回个下一个栈帧</li>
-</ul>
-<h2 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h2><ul>
-<li><p>解析 </p>
-<ul>
-<li>invokestatic:调用静态方法</li>
-<li>invokespecial：调用实例构造器</li>
-<li>invokevirtual：调用虚方法</li>
-<li>invokeinterface：接口方法</li>
-<li>invokedynamic：前四个固化在JVM内部，这个使我们可以自定义分派方法</li>
+<li>通过一个类的全限定名来获取定义此类的二进制字节流</li>
+<li>将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构</li>
+<li>在内存中生成一个代表这个类的Java.lang.Class 对象，作为<strong>方法区 </strong>这个类各项数据的访问入口</li>
 </ul>
 </li>
-<li><p>分派（存在疑问P247）</p>
+<li><p>Verification</p>
 <ul>
-<li>静态分派</li>
-<li>动态分派</li>
-<li>单分派和多分派</li>
-<li>虚拟机动态分派的实现：最常用的“稳定优化”手段就是在类的方法区中建立一个虚方法表，虚方法表存放着各个方法的实际入口地址</li>
+<li>文件格式验证</li>
+<li>元数据验证</li>
+<li>字节码验证</li>
+<li>符号引用验证</li>
+</ul>
+<p>为了虚拟机自身的安全</p>
+</li>
+<li><p>preparation</p>
+<ul>
+<li>准备阶段正式为类变量分配内存，并设置类变量初始值的结果，如public static int value=123，准备阶段为0</li>
 </ul>
 </li>
-<li><p>动态类型语言支持</p>
-<p>A num=123；</p>
-<p>动态语言：类型由123确定</p>
-<p>静态语言：A 确定，它的类型已经被写进字节码文件中了</p>
+<li><p>解析</p>
 <ul>
-<li><p>invokevirtual：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MethodType mt=MethodType.methodType(void.class,String.class)</span><br><span class="line">lookup().findVirtual(recevier.getClass,&quot;println&quot;,mt).bindTo(recevier)</span><br></pre></td></tr></table></figure>
-<p>MethodType和MethodHandles lookup().findVirtual(receiver.getClass,”println”,methodHandles).bindTo(Receiver)</p>
+<li><p>解析阶段是虚拟机将常量池中的符号引用<strong>替换</strong>为直接引用的过程</p>
 <ul>
-<li>methodHandles：轻量级、在字节码级别，指令调用的模拟</li>
-<li>reflection：重量级、包含更多信息、java一端的全面镜像</li>
-</ul>
+<li><p>符号引用以一组符号来描述所引用的目标，符号可以是任何形式的字面量，只要使用时能够无歧义的定位到目标即可。例如，在Class文件中它以CONSTANT_Class_info、CONSTANT_Fieldref_info、CONSTANT_Methodref_info等类型的常量出现。符号引用与虚拟机的内存布局无关，引用的目标并不一定加载到内存中。在Java中，一个java类将会编译成一个class文件。在编译时，java类并不知道所引用的类的实际地址，因此只能使用符号引用来代替。比如org.simple.People类引用了org.simple.Language类，在编译时People类并不知道Language类的实际内存地址，因此只能使用符号org.simple.Language（假设是这个，当然实际中是由类似于CONSTANT_Class_info的常量来表示的）来表示Language类的地址。各种虚拟机实现的内存布局可能有所不同，但是它们能接受的符号引用都是一致的，因为符号引用的字面量形式明确定义在Java虚拟机规范的Class文件格式中。</p>
 </li>
-<li><p>invokedynamic:为了更好地支持动态类型语言，作用的MethodHandle机制的作用一样，把查找目标方法的决定权由虚拟机转嫁到具体用户代码中，获得更高自由度。它面向的使用者并非java语言，而是java虚拟机上的动态语言，它让我们可以控制方法分派规则，如获得祖方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Method mt=MethodType.methodType(void.class)</span><br><span class="line">MethodHandle mh=lookup().findSpecial(GrandFather.class,&quot;thinking&quot;,mt,getClass)</span><br><span class="line">mh.invoke(this)</span><br></pre></td></tr></table></figure>
+<li><p>直接引用可以是</p>
+<p>（1）直接指向目标的指针（比如，指向“类型”【Class对象】、类变量、类方法的直接引用可能是指向方法区的指针）</p>
+<p>（2）相对偏移量（比如，指向实例变量、实例方法的直接引用都是偏移量）</p>
+<p>（3）一个能间接定位到目标的句柄</p>
+<p>直接引用是和虚拟机的布局相关的，同一个符号引用在不同的虚拟机实例上翻译出来的直接引用一般不会相同。如果有了直接引用，那引用的目标必定已经被加载入内存中了。</p>
 </li>
 </ul>
 </li>
+<li><p>类或接口的解析</p>
+</li>
+<li><p>字段解析</p>
+</li>
+<li><p>接口方法解析</p>
+</li>
 </ul>
-<h2 id="基于栈的字节码执行引擎"><a href="#基于栈的字节码执行引擎" class="headerlink" title="基于栈的字节码执行引擎"></a>基于栈的字节码执行引擎</h2><ul>
-<li>解释执行</li>
-<li>基于栈的指令集和基于寄存器的指令集</li>
-<li>基于栈的解释器执行过程<ul>
-<li>距离：P273</li>
+</li>
+<li><p>初始化</p>
+<p>初始化阶段才开始执行类中定义的Java程序代码，初始化阶段是执行类构造器<strong><clinit>()</clinit></strong>方法的过程</p>
+<ul>
+<li><clinit> 编译器自动收集类中的所有类变量的赋值操作和静态语句块，虚拟机保证子类的<clinit>执行时父类的已执行完成，这和<init>不一样</init></clinit></clinit></li>
+</ul>
+</li>
+</ul>
+<h2 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h2><ul>
+<li><p>类与类加载器</p>
+<p>任意一个类都需要由加载它的类加载器和这个类本身一同确定其在Java虚拟的唯一性，每一个类加载器，都拥有一个独立的类名称空间</p>
+</li>
+<li><p>双亲委派模型</p>
+<ul>
+<li><p>启动类加载器</p>
+</li>
+<li><p>扩展类加载器</p>
+</li>
+<li><p>应用程序类加载器：自定义的类加载器继承自这个加载器</p>
+<p><img src="http://img.blog.csdn.net/20160506184936657" alt="双亲委派模型"></p>
+</li>
+</ul>
+</li>
+<li><p>破坏双亲委派模型</p>
+<ul>
+<li>代码热替换（HotSwap）、模块热部署（Hot Deployment）</li>
+<li>OSGi 双亲委派模型发展为复杂的网状结构</li>
 </ul>
 </li>
 </ul>
@@ -396,8 +420,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/05/todo-mvp/" rel="next" title="从google的todo学习MVP">
-                <i class="fa fa-chevron-left"></i> 从google的todo学习MVP
+              <a href="/2017/10/11/自动管理内存机制/" rel="next" title="自动内存管理机制">
+                <i class="fa fa-chevron-left"></i> 自动内存管理机制
               </a>
             
           </div>
@@ -405,10 +429,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/05/Majority Element II/" rel="prev" title="Majority Element">
-                Majority Element <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -531,7 +551,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟机字节码引擎"><span class="nav-number">1.</span> <span class="nav-text">虚拟机字节码引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时栈帧结构"><span class="nav-number">1.1.</span> <span class="nav-text">运行时栈帧结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法调用"><span class="nav-number">1.2.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于栈的字节码执行引擎"><span class="nav-number">1.3.</span> <span class="nav-text">基于栈的字节码执行引擎</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟机类加载机制"><span class="nav-number">1.</span> <span class="nav-text">虚拟机类加载机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载的时间"><span class="nav-number">1.1.</span> <span class="nav-text">类加载的时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载过程"><span class="nav-number">1.2.</span> <span class="nav-text">类加载过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载器"><span class="nav-number">1.3.</span> <span class="nav-text">类加载器</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="虚拟机字节码引擎运行时栈帧结构每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈  局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域 操作数栈：字节码指令栈 动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用 方法返回地址：返回个下一个栈帧  方法调用 解析   invokestatic:调用静态方法 invokespecial：调用实例构">
+<meta name="description" content="类文件结构概述Java虚拟机只与“Class文件”这种特定的二进制文件关联，Class文件格式采用一种类似于C语言结构体的伪结构来存储数据，包括两种数据类型：无符号数和表 类文件结构魔数与Class文件的版本每个Class文件的头4个字节称为魔数，用来确定一个能被虚拟机接受的Class文件，身份识别 常量池它是Class文件结构中与其他项目关联最多的数据类型，也是占用Class文件空间大小最大的数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虚拟机字节码引擎">
-<meta property="og:url" content="http://yoursite.com/2017/07/05/虚拟机字节码引擎/index.html">
+<meta property="og:title" content="类文件结构">
+<meta property="og:url" content="http://yoursite.com/2017/10/11/类文件结构/index.html">
 <meta property="og:site_name" content="nosalt">
-<meta property="og:description" content="虚拟机字节码引擎运行时栈帧结构每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈  局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域 操作数栈：字节码指令栈 动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用 方法返回地址：返回个下一个栈帧  方法调用 解析   invokestatic:调用静态方法 invokespecial：调用实例构">
-<meta property="og:updated_time" content="2017-12-29T16:52:59.134Z">
+<meta property="og:description" content="类文件结构概述Java虚拟机只与“Class文件”这种特定的二进制文件关联，Class文件格式采用一种类似于C语言结构体的伪结构来存储数据，包括两种数据类型：无符号数和表 类文件结构魔数与Class文件的版本每个Class文件的头4个字节称为魔数，用来确定一个能被虚拟机接受的Class文件，身份识别 常量池它是Class文件结构中与其他项目关联最多的数据类型，也是占用Class文件空间大小最大的数">
+<meta property="og:updated_time" content="2017-12-29T16:58:36.725Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="虚拟机字节码引擎">
-<meta name="twitter:description" content="虚拟机字节码引擎运行时栈帧结构每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈  局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域 操作数栈：字节码指令栈 动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用 方法返回地址：返回个下一个栈帧  方法调用 解析   invokestatic:调用静态方法 invokespecial：调用实例构">
+<meta name="twitter:title" content="类文件结构">
+<meta name="twitter:description" content="类文件结构概述Java虚拟机只与“Class文件”这种特定的二进制文件关联，Class文件格式采用一种类似于C语言结构体的伪结构来存储数据，包括两种数据类型：无符号数和表 类文件结构魔数与Class文件的版本每个Class文件的头4个字节称为魔数，用来确定一个能被虚拟机接受的Class文件，身份识别 常量池它是Class文件结构中与其他项目关联最多的数据类型，也是占用Class文件空间大小最大的数">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/05/虚拟机字节码引擎/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/11/类文件结构/"/>
 
 
 
 
 
-  <title>虚拟机字节码引擎 | nosalt</title>
+  <title>类文件结构 | nosalt</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/虚拟机字节码引擎/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/类文件结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">虚拟机字节码引擎</h1>
+          <h1 class="post-title" itemprop="name headline">类文件结构</h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
-                2017-07-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-11T13:33:00+08:00">
+                2017-10-11
               </time>
             
 
@@ -320,58 +320,83 @@
       
 
       
-        <h1 id="虚拟机字节码引擎"><a href="#虚拟机字节码引擎" class="headerlink" title="虚拟机字节码引擎"></a>虚拟机字节码引擎</h1><h2 id="运行时栈帧结构"><a href="#运行时栈帧结构" class="headerlink" title="运行时栈帧结构"></a>运行时栈帧结构</h2><p>每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈</p>
+        <h1 id="类文件结构"><a href="#类文件结构" class="headerlink" title="类文件结构"></a>类文件结构</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Java虚拟机只与“Class文件”这种特定的二进制文件关联，Class文件格式采用一种类似于C语言结构体的伪结构来存储数据，包括两种数据类型：无符号数和表</p>
+<h2 id="类文件结构-1"><a href="#类文件结构-1" class="headerlink" title="类文件结构"></a>类文件结构</h2><h3 id="魔数与Class文件的版本"><a href="#魔数与Class文件的版本" class="headerlink" title="魔数与Class文件的版本"></a>魔数与Class文件的版本</h3><p>每个Class文件的头4个字节称为魔数，用来确定一个能被虚拟机接受的Class文件，身份识别</p>
+<h3 id="常量池"><a href="#常量池" class="headerlink" title="常量池"></a>常量池</h3><p>它是Class文件结构中与其他项目关联最多的数据类型，也是占用Class文件空间大小最大的数据项目之一，在常量池的入口需要放置意向u2类型的数据，代表常量池容量计数器。从一开始，0016为22但只有21个常量。常量池中主要存放两大类常量：字面量和符号引用。</p>
 <ul>
-<li>局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域</li>
-<li>操作数栈：字节码指令栈</li>
-<li>动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用</li>
-<li>方法返回地址：返回个下一个栈帧</li>
+<li>字面量：Java层面的final常量值、字符串常量池</li>
+<li>符号引用：</li>
 </ul>
-<h2 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h2><ul>
-<li><p>解析 </p>
+<ol>
+<li>类和接口的全限定名</li>
+<li>字段的名称和描述符</li>
+<li>方法的名称和描述符</li>
+</ol>
+<p>当虚拟机运行时需要从常量池获得对应的符号引用，再在类创建和引用是解析、翻译（即动态链接）常量池中的每一个常量都是一个表，总共有14种表，表开始的第一位是一个u1类型的标志位，代表当前这个常量属于哪种类型常量</p>
 <ul>
-<li>invokestatic:调用静态方法</li>
-<li>invokespecial：调用实例构造器</li>
-<li>invokevirtual：调用虚方法</li>
-<li>invokeinterface：接口方法</li>
-<li>invokedynamic：前四个固化在JVM内部，这个使我们可以自定义分派方法</li>
+<li><init>和<cinit>的区别：一个是虚拟机在装载一个类初始化的时候调用的（clinit，类构造器）。另一个是在类实例化时调用的（init，实例构造器）</cinit></init></li>
 </ul>
-</li>
-<li><p>分派（存在疑问P247）</p>
+<h3 id="访问标志"><a href="#访问标志" class="headerlink" title="访问标志"></a>访问标志</h3><p>用于标示一些类或者接口层次的访问信息</p>
+<h3 id="类索引、父类索引、借口索引集合"><a href="#类索引、父类索引、借口索引集合" class="headerlink" title="类索引、父类索引、借口索引集合"></a>类索引、父类索引、借口索引集合</h3><p>Class 文件由这三项数据来确定这个类的继承关系，他们都是U2类型的数据</p>
+<h3 id="字段表集合"><a href="#字段表集合" class="headerlink" title="字段表集合"></a>字段表集合</h3><p>用于描述接口或者类中声明的变量，字段表中不会包括从父类或者父接口继承而来的字段</p>
+<h3 id="方法表集合"><a href="#方法表集合" class="headerlink" title="方法表集合"></a>方法表集合</h3><p>包括访问标志、名称索引、描述符索引、属性表集合</p>
+<h3 id="属性表集合"><a href="#属性表集合" class="headerlink" title="属性表集合"></a>属性表集合</h3><ul>
+<li>Code属性（表）程序方法体最终经过Javac编译器处理后，最终变成字节码指令储存在code中</li>
+<li>Exceptions属性</li>
+<li>LineNumberTable：描述java源码行号和字节码行号</li>
+<li>LocalVariableTable用于描述栈帧中局部变量表中的变量与Java源码变量名的关系</li>
+<li>SourceFile用于记录生成Class文件的源码文件名称</li>
+<li>ConstantValue：对于非静态类型的变量实在<init>,对于静态变量可以在<cinit>或ConstantValue初始化，一般static final使用ConstantValue（必须为ACC_FINAL）</cinit></init></li>
+<li>InnerClass</li>
+<li>Deprecated及Synthetic属性</li>
+<li>StackMapTable</li>
+<li>Signature属性会为泛型变量记录泛型类型签名信息，Java泛型采用的是擦除法实现的伪范型</li>
+<li>BootstrapMethods属性</li>
+</ul>
+<h3 id="字节码指令简介"><a href="#字节码指令简介" class="headerlink" title="字节码指令简介"></a>字节码指令简介</h3><ul>
+<li><p>加载和存储指令</p>
 <ul>
-<li>静态分派</li>
-<li>动态分派</li>
-<li>单分派和多分派</li>
-<li>虚拟机动态分派的实现：最常用的“稳定优化”手段就是在类的方法区中建立一个虚方法表，虚方法表存放着各个方法的实际入口地址</li>
+<li>_load将一个局部变量加载到操作栈</li>
+<li>_store将一个数值操作数栈存储到局部变量表</li>
+<li>_push _const 将一个常量加载到操作数栈</li>
 </ul>
 </li>
-<li><p>动态类型语言支持</p>
-<p>A num=123；</p>
-<p>动态语言：类型由123确定</p>
-<p>静态语言：A 确定，它的类型已经被写进字节码文件中了</p>
+<li><p>运算指令</p>
 <ul>
-<li><p>invokevirtual：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MethodType mt=MethodType.methodType(void.class,String.class)</span><br><span class="line">lookup().findVirtual(recevier.getClass,&quot;println&quot;,mt).bindTo(recevier)</span><br></pre></td></tr></table></figure>
-<p>MethodType和MethodHandles lookup().findVirtual(receiver.getClass,”println”,methodHandles).bindTo(Receiver)</p>
+<li><p>加法指令：_add</p>
+</li>
+<li><p>减法指令：_sub</p>
+</li>
+<li><p>乘法指令：_mul</p>
+</li>
+<li><p>除法指令：_div</p>
+</li>
+<li><p>求余指令:_rem</p>
+<p>………</p>
+</li>
+</ul>
+</li>
+<li><p>类型转换指令</p>
+</li>
+<li><p>对象创建与访问指令</p>
+</li>
+<li><p>操作数栈管理指令</p>
 <ul>
-<li>methodHandles：轻量级、在字节码级别，指令调用的模拟</li>
-<li>reflection：重量级、包含更多信息、java一端的全面镜像</li>
+<li>将操作数栈的栈顶一个或两个出栈pop、pop2</li>
+<li>交换栈顶两个数值swap</li>
+<li>复制栈顶一个或两个数值dup、dup2</li>
 </ul>
 </li>
-<li><p>invokedynamic:为了更好地支持动态类型语言，作用的MethodHandle机制的作用一样，把查找目标方法的决定权由虚拟机转嫁到具体用户代码中，获得更高自由度。它面向的使用者并非java语言，而是java虚拟机上的动态语言，它让我们可以控制方法分派规则，如获得祖方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Method mt=MethodType.methodType(void.class)</span><br><span class="line">MethodHandle mh=lookup().findSpecial(GrandFather.class,&quot;thinking&quot;,mt,getClass)</span><br><span class="line">mh.invoke(this)</span><br></pre></td></tr></table></figure>
+<li><p>控制转移指令：条件分支ifeq</p>
+</li>
+<li><p>方法调用和返回指令</p>
+</li>
+<li><p>异常处理指令</p>
+</li>
+<li><p>同步指令：monitorenter monitorexit</p>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="基于栈的字节码执行引擎"><a href="#基于栈的字节码执行引擎" class="headerlink" title="基于栈的字节码执行引擎"></a>基于栈的字节码执行引擎</h2><ul>
-<li>解释执行</li>
-<li>基于栈的指令集和基于寄存器的指令集</li>
-<li>基于栈的解释器执行过程<ul>
-<li>距离：P273</li>
-</ul>
-</li>
-</ul>
+<h3 id="公有设计和私有实现"><a href="#公有设计和私有实现" class="headerlink" title="公有设计和私有实现"></a>公有设计和私有实现</h3><p>Java虚拟机实现必须能够读取Class文件并准确实现包含在其中的Java虚拟机代码，但允许优化Class文件只要它依然能够被读取</p>
 
       
     </div>
@@ -396,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/05/todo-mvp/" rel="next" title="从google的todo学习MVP">
-                <i class="fa fa-chevron-left"></i> 从google的todo学习MVP
+              <a href="/2017/07/13/Java零碎知识点/" rel="next" title="Java零碎知识点">
+                <i class="fa fa-chevron-left"></i> Java零碎知识点
               </a>
             
           </div>
@@ -406,8 +431,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/05/Majority Element II/" rel="prev" title="Majority Element">
-                Majority Element <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/11/自动管理内存机制/" rel="prev" title="自动内存管理机制">
+                自动内存管理机制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -531,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟机字节码引擎"><span class="nav-number">1.</span> <span class="nav-text">虚拟机字节码引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时栈帧结构"><span class="nav-number">1.1.</span> <span class="nav-text">运行时栈帧结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法调用"><span class="nav-number">1.2.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于栈的字节码执行引擎"><span class="nav-number">1.3.</span> <span class="nav-text">基于栈的字节码执行引擎</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类文件结构"><span class="nav-number">1.</span> <span class="nav-text">类文件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类文件结构-1"><span class="nav-number">1.2.</span> <span class="nav-text">类文件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#魔数与Class文件的版本"><span class="nav-number">1.2.1.</span> <span class="nav-text">魔数与Class文件的版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量池"><span class="nav-number">1.2.2.</span> <span class="nav-text">常量池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问标志"><span class="nav-number">1.2.3.</span> <span class="nav-text">访问标志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类索引、父类索引、借口索引集合"><span class="nav-number">1.2.4.</span> <span class="nav-text">类索引、父类索引、借口索引集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字段表集合"><span class="nav-number">1.2.5.</span> <span class="nav-text">字段表集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法表集合"><span class="nav-number">1.2.6.</span> <span class="nav-text">方法表集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性表集合"><span class="nav-number">1.2.7.</span> <span class="nav-text">属性表集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字节码指令简介"><span class="nav-number">1.2.8.</span> <span class="nav-text">字节码指令简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公有设计和私有实现"><span class="nav-number">1.2.9.</span> <span class="nav-text">公有设计和私有实现</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
