@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="虚拟机字节码引擎运行时栈帧结构每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈  局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域 操作数栈：字节码指令栈 动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用 方法返回地址：返回个下一个栈帧  方法调用 解析   invokestatic:调用静态方法 invokespecial：调用实例构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/12/29/hello-world/index.html">
+<meta property="og:title" content="nosalt">
+<meta property="og:url" content="http://yoursite.com/2017/12/30/虚拟机字节码引擎/index.html">
 <meta property="og:site_name" content="nosalt">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-12-29T13:27:06.698Z">
+<meta property="og:description" content="虚拟机字节码引擎运行时栈帧结构每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈  局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域 操作数栈：字节码指令栈 动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用 方法返回地址：返回个下一个栈帧  方法调用 解析   invokestatic:调用静态方法 invokespecial：调用实例构">
+<meta property="og:updated_time" content="2017-10-11T13:19:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="nosalt">
+<meta name="twitter:description" content="虚拟机字节码引擎运行时栈帧结构每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈  局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域 操作数栈：字节码指令栈 动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用 方法返回地址：返回个下一个栈帧  方法调用 解析   invokestatic:调用静态方法 invokespecial：调用实例构">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/29/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/30/虚拟机字节码引擎/"/>
 
 
 
 
 
-  <title>Hello World | nosalt</title>
+  <title> | nosalt</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/30/虚拟机字节码引擎/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-29T21:27:06+08:00">
-                2017-12-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T00:32:22+08:00">
+                2017-12-30
               </time>
             
 
@@ -298,15 +298,58 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="虚拟机字节码引擎"><a href="#虚拟机字节码引擎" class="headerlink" title="虚拟机字节码引擎"></a>虚拟机字节码引擎</h1><h2 id="运行时栈帧结构"><a href="#运行时栈帧结构" class="headerlink" title="运行时栈帧结构"></a>运行时栈帧结构</h2><p>每一个方法从调用开始至执行完成的过程，都对应着一个栈帧在虚拟机栈里面的出入栈</p>
+<ul>
+<li>局部变量表：以变量槽（slot）为单位,它是可以复用，根据那个变量的作用域</li>
+<li>操作数栈：字节码指令栈</li>
+<li>动态链接：栈帧中有指向运行时常量池中该栈帧所属方法的引用</li>
+<li>方法返回地址：返回个下一个栈帧</li>
+</ul>
+<h2 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h2><ul>
+<li><p>解析 </p>
+<ul>
+<li>invokestatic:调用静态方法</li>
+<li>invokespecial：调用实例构造器</li>
+<li>invokevirtual：调用虚方法</li>
+<li>invokeinterface：接口方法</li>
+<li>invokedynamic：前四个固化在JVM内部，这个使我们可以自定义分派方法</li>
+</ul>
+</li>
+<li><p>分派（存在疑问P247）</p>
+<ul>
+<li>静态分派</li>
+<li>动态分派</li>
+<li>单分派和多分派</li>
+<li>虚拟机动态分派的实现：最常用的“稳定优化”手段就是在类的方法区中建立一个虚方法表，虚方法表存放着各个方法的实际入口地址</li>
+</ul>
+</li>
+<li><p>动态类型语言支持</p>
+<p>A num=123；</p>
+<p>动态语言：类型由123确定</p>
+<p>静态语言：A 确定，它的类型已经被写进字节码文件中了</p>
+<ul>
+<li><p>invokevirtual：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MethodType mt=MethodType.methodType(void.class,String.class)</span><br><span class="line">lookup().findVirtual(recevier.getClass,&quot;println&quot;,mt).bindTo(recevier)</span><br></pre></td></tr></table></figure>
+<p>MethodType和MethodHandles lookup().findVirtual(receiver.getClass,”println”,methodHandles).bindTo(Receiver)</p>
+<ul>
+<li>methodHandles：轻量级、在字节码级别，指令调用的模拟</li>
+<li>reflection：重量级、包含更多信息、java一端的全面镜像</li>
+</ul>
+</li>
+<li><p>invokedynamic:为了更好地支持动态类型语言，作用的MethodHandle机制的作用一样，把查找目标方法的决定权由虚拟机转嫁到具体用户代码中，获得更高自由度。它面向的使用者并非java语言，而是java虚拟机上的动态语言，它让我们可以控制方法分派规则，如获得祖方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Method mt=MethodType.methodType(void.class)</span><br><span class="line">MethodHandle mh=lookup().findSpecial(GrandFather.class,&quot;thinking&quot;,mt,getClass)</span><br><span class="line">mh.invoke(this)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="基于栈的字节码执行引擎"><a href="#基于栈的字节码执行引擎" class="headerlink" title="基于栈的字节码执行引擎"></a>基于栈的字节码执行引擎</h2><ul>
+<li>解释执行</li>
+<li>基于栈的指令集和基于寄存器的指令集</li>
+<li>基于栈的解释器执行过程<ul>
+<li>距离：P273</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -331,13 +374,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/12/30/深入理解JAVA虚拟机(一)/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/30/aop/" rel="prev" title="">
+              <a href="/2017/12/30/虚拟机类加载机制/" rel="prev" title="">
                  <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -453,7 +500,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟机字节码引擎"><span class="nav-number">1.</span> <span class="nav-text">虚拟机字节码引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时栈帧结构"><span class="nav-number">1.1.</span> <span class="nav-text">运行时栈帧结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法调用"><span class="nav-number">1.2.</span> <span class="nav-text">方法调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于栈的字节码执行引擎"><span class="nav-number">1.3.</span> <span class="nav-text">基于栈的字节码执行引擎</span></a></li></ol></li></ol></div>
             
 
           </div>

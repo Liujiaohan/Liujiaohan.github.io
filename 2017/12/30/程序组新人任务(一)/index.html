@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="程序组新人任务Linux常用命令 ls 显示文件和目录  -l 列出文件详细信息 -a 列出当前目录下所有文件急目录，包括隐藏的   mkdir 创建目录 -p 创建目录，若无父目录，则创建p（parent）  cd 切换目录   .” 指的是工作目录，”..” 指的是工作目录的父目录  touch 创建空目录  echo 创建带有内容的文件echo “hello world”&amp;gt;&amp;gt;a.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nosalt">
+<meta property="og:url" content="http://yoursite.com/2017/12/30/程序组新人任务(一)/index.html">
+<meta property="og:site_name" content="nosalt">
+<meta property="og:description" content="程序组新人任务Linux常用命令 ls 显示文件和目录  -l 列出文件详细信息 -a 列出当前目录下所有文件急目录，包括隐藏的   mkdir 创建目录 -p 创建目录，若无父目录，则创建p（parent）  cd 切换目录   .” 指的是工作目录，”..” 指的是工作目录的父目录  touch 创建空目录  echo 创建带有内容的文件echo “hello world”&amp;gt;&amp;gt;a.">
+<meta property="og:image" content="http://images.cnitblog.com/blog/352072/201402/091549405142313.png">
+<meta property="og:updated_time" content="2017-10-23T05:02:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nosalt">
+<meta name="twitter:description" content="程序组新人任务Linux常用命令 ls 显示文件和目录  -l 列出文件详细信息 -a 列出当前目录下所有文件急目录，包括隐藏的   mkdir 创建目录 -p 创建目录，若无父目录，则创建p（parent）  cd 切换目录   .” 指的是工作目录，”..” 指的是工作目录的父目录  touch 创建空目录  echo 创建带有内容的文件echo “hello world”&amp;gt;&amp;gt;a.">
+<meta name="twitter:image" content="http://images.cnitblog.com/blog/352072/201402/091549405142313.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/30/程序组新人任务(一)/"/>
+
+
+
+
+
+  <title> | nosalt</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">nosalt</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/30/程序组新人任务(一)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-30T00:32:22+08:00">
+                2017-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="程序组新人任务"><a href="#程序组新人任务" class="headerlink" title="程序组新人任务"></a>程序组新人任务</h1><h2 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h2><ul>
+<li><p>ls 显示文件和目录</p>
+<ul>
+<li>-l 列出文件详细信息</li>
+<li>-a 列出当前目录下所有文件急目录，包括隐藏的</li>
+</ul>
+</li>
+<li><p>mkdir 创建目录</p>
+<p>-p 创建目录，若无父目录，则创建p（parent）</p>
+</li>
+<li><p>cd 切换目录   .” 指的是工作目录，”..” 指的是工作目录的父目录</p>
+</li>
+<li><p>touch 创建空目录</p>
+</li>
+<li><p>echo 创建带有内容的文件echo “hello world”&gt;&gt;a.sh</p>
+</li>
+<li><p>cat 查看文件内容</p>
+</li>
+<li><p>cp 拷贝 cp file1 file2</p>
+</li>
+<li><p>mv 移动或重命名</p>
+</li>
+<li><p>rm 删除文件</p>
+<p>-r 递归删除</p>
+<p>-f 强制删除</p>
+</li>
+<li><p>find 在文件系统中搜索某文件</p>
+</li>
+<li><p>wc 统计文本中行数、字数、字符串</p>
+</li>
+<li><p>grep 在文件中查找某个字符串</p>
+</li>
+<li><p>rmdir 删除空目录</p>
+</li>
+<li><p>tree 树型结构</p>
+</li>
+<li><p>pwd 显示往前目录</p>
+</li>
+<li><p>In 创建链接</p>
+</li>
+<li><p>ctrl+alt+F1 命令换全屏模式</p>
+</li>
+<li><p>alt+F7 退出全屏</p>
+</li>
+</ul>
+<h2 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h2><ul>
+<li>start 显示制定文件详细信息</li>
+<li>who 显示在线登录目录</li>
+<li>whoami 显示当前操作用户</li>
+<li>hostname 显示主机名</li>
+<li>unname 显示系统消息</li>
+<li>top 资源占用情况</li>
+<li>ps 显示瞬间进程状态 </li>
+<li>ifconfig 查看网络状态</li>
+<li>ping 测试网络连通</li>
+<li>netstat 显示网络状态信息</li>
+<li>man 查看命令手册</li>
+<li>clear 清屏</li>
+<li>alias 对命令重命名 如：alias showmeit=“ps-aux”</li>
+<li>kill 杀死进程，先用ps或top查看进程id</li>
+</ul>
+<h2 id="打包压缩相关命令"><a href="#打包压缩相关命令" class="headerlink" title="打包压缩相关命令"></a>打包压缩相关命令</h2><ul>
+<li><p>gzip：</p>
+</li>
+<li><p>bzip2：</p>
+</li>
+<li><p>tar： 打包压缩</p>
+<p>-c 归档文件</p>
+<p>-x 解压文件</p>
+<p>-z gzip压缩文件</p>
+<p>-j bzip2压缩文件</p>
+<p>-v 显示压缩和解压缩过程</p>
+<p>-f 使用档名</p>
+<p>例子：</p>
+<p>tar -cvf /home/abc.tar /home/abc              只打包，不压缩</p>
+<p>tar -zcvf /home/abc.tar.gz /home/abc        打包，并用gzip压缩</p>
+<p>tar -jcvf /home/abc.tar.bz2 /home/abc      打包，并用bzip2压缩</p>
+<p>关机/重启</p>
+</li>
+<li><p>shutdown </p>
+<ul>
+<li>-r 关机重启</li>
+<li>-h 关机不重启</li>
+<li>now 立刻关机</li>
+</ul>
+</li>
+<li>halt 关机</li>
+<li>reboot 重启</li>
+</ul>
+<h2 id="Linux软件包管理"><a href="#Linux软件包管理" class="headerlink" title="Linux软件包管理"></a>Linux软件包管理</h2><p>dpkg(Debian Package)管理工具</p>
+<ul>
+<li>sudo dpkg -i tree_1.5.3-1_i386.deb</li>
+<li>sudo dpkg -r tree</li>
+</ul>
+<p>apt 高级软件工具</p>
+<ul>
+<li>sudo apt-get install tree 安装</li>
+<li>sudo apt-get remove tree 卸载</li>
+<li>sudo apt-get upgrade 更新软件</li>
+<li>sudo apt-get update</li>
+</ul>
+<p>将.rpm文件转为.deb</p>
+<ul>
+<li>.rpm为Redhat使用的软件格式</li>
+<li>sudo alien abc.rpm</li>
+</ul>
+<h2 id="用户及用户组管理"><a href="#用户及用户组管理" class="headerlink" title="用户及用户组管理"></a>用户及用户组管理</h2><p>/etc/passwd 储存用户账号</p>
+<p>/etc/group 储存组账号</p>
+<p>/etc/shadow 储存用户账号的密码</p>
+<p>/etc/gshadow  储存用户组账号的密码</p>
+<p>useradd 用户名</p>
+<p>userdel 用户名</p>
+<p>adduser 用户名</p>
+<p>groupdel 组名</p>
+<p>groupadd  组名</p>
+<p>passwd root 给root设置密码</p>
+<p>su root</p>
+<p>su -root</p>
+<p>/etc/profile 系统环境变量</p>
+<p>bash_profile 用户环境变量</p>
+<p>.bashrc 用户环境变量</p>
+<p>su user     切换用户，加载配置文件.bashrc</p>
+<p>su -user 切换用户，加载配置文件/etc/profile</p>
+<h2 id="vim的使用"><a href="#vim的使用" class="headerlink" title="vim的使用"></a>vim的使用</h2><p>vim三种模式：命令模式、插入模式、编辑模式。使用ESC或i或：来回切换</p>
+<ul>
+<li>:q 退出</li>
+<li>:q! 强制退出</li>
+<li>：wq 保存并退出</li>
+<li>：set number 显示行号</li>
+<li>：set nonumber 隐藏行号</li>
+<li>/apache 在文档中查找apache按n调到下一个，shift+n上一个</li>
+<li>yyp  复制光标所在行并粘贴</li>
+</ul>
+<p>##Linux管道</p>
+<p>将一个命令的标准输出作为另一个命令的标准输入。也就是把几个命令组合起来使用，后一个命令除以前一个命令的结果。</p>
+<p>例：grep -r “close” /home/* | more       在home目录下所有文件中查找，包括close的文件，并分页输出。</p>
+<h2 id="文件权限管理"><a href="#文件权限管理" class="headerlink" title="文件权限管理"></a>文件权限管理</h2><ul>
+<li>三种基本权限</li>
+</ul>
+<p>R 读 数值为4</p>
+<p>W 写 数值为2</p>
+<p>X 可执行 数值表示为1</p>
+<p><img src="http://images.cnitblog.com/blog/352072/201402/091549405142313.png" alt="图片"></p>
+<p>如图所示，jdk-7u21-linux-i586.tar.gz文件的权限为-rw-rw-r–</p>
+<p>）</p>
+<p>第一个字符“-”表示普通文件；这个位置还可能会出现“l”链接；“d”表示目录</p>
+<p>第二三四个字符“rw-”表示当前所属用户的权限。   所以用数值表示为4+2=6</p>
+<p>第五六七个字符“rw-”表示当前所属组的权限。      所以用数值表示为4+2=6</p>
+<ul>
+<li>更改权限</li>
+</ul>
+<p>sudo chmod [u所属用户  g所属组  o其他用户  a所有用户]  [+增加权限  -减少权限]  [r  w  x]   目录名 </p>
+<p>例如：有一个文件filename，权限为“-rw-r—-x” ,将权限值改为”-rwxrw-r-x”，用数值表示为765</p>
+<p>sudo chmod u+x g+w o+r  filename</p>
+<p>上面的例子可以用数值表示</p>
+<p>sudo chmod 765 filename</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p> awk:编程语言</p>
+<p>pwd : 打印出当前工作目录名</p>
+<p>sort:sort[options] filename</p>
+<p>scp（security copy）:scp是有Security的文件copy，基于ssh登录。操作起来比较方便，比如要把当前一个文件copy到远程另外一台主机上，可以如下命令。scp /home/daisy/full.tar.gz root@172.19.2.75:/home/root</p>
+<p>所以操作此文件的权限用数值表示为662 </p>
+<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><p>scp:scp是有Security的文件copy，基于ssh登录。操作起来比较方便，比如要把当前一个文件copy到远程另外一台主机上，可以如下命令。scp /home/daisy/full.tar.gz root@172.19.2.75:/home/root</p>
+<p>ssh:SSH是一种网络协议，用于计算机之间的加密登录。<a href="http://blog.csdn.net/pipisorry/article/details/52269785" target="_blank" rel="noopener">ssh</a></p>
+<ul>
+<li>使用密码登录： ssh -P 2222 root@192.168.0.111</li>
+<li>公钥登录：ssh-copy-id user@host</li>
+<li>nohup python3 a.py &amp;  让程序仍在后台</li>
+</ul>
+<p>head:显示文件前几行</p>
+<p>tail:显示文件末几行</p>
+<p>more\less:分页</p>
+<p>cut命令：cut命令用来显示行中的指定部分，删除文件中指定字段。cut经常用来显示文件的内容，类似于下的type命令。</p>
+<p>wc:Linux系统中的wc(Word Count)命令的功能为统计指定文件中的字节数、字数、行数，并将统计结果显示输出。</p>
+<h2 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h2><p>wget:  wget[选项] （参数）wget <a href="http://www.linuxde.net/testfile.zip" target="_blank" rel="noopener">http://www.linuxde.net/testfile.zip</a></p>
+<p>curl: 来自: <a href="http://man.linuxde.net/curl" target="_blank" rel="noopener">http://man.linuxde.net/curl</a></p>
+<p>11 11 41 11 222 33 12 52 11 11</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/30/类文件结构/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/30/深入理解JAVA虚拟机(一)/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">nosalt</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#程序组新人任务"><span class="nav-number">1.</span> <span class="nav-text">程序组新人任务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux常用命令"><span class="nav-number">1.1.</span> <span class="nav-text">Linux常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统管理命令"><span class="nav-number">1.2.</span> <span class="nav-text">系统管理命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打包压缩相关命令"><span class="nav-number">1.3.</span> <span class="nav-text">打包压缩相关命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux软件包管理"><span class="nav-number">1.4.</span> <span class="nav-text">Linux软件包管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户及用户组管理"><span class="nav-number">1.5.</span> <span class="nav-text">用户及用户组管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim的使用"><span class="nav-number">1.6.</span> <span class="nav-text">vim的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件权限管理"><span class="nav-number">1.7.</span> <span class="nav-text">文件权限管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">1.8.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他命令"><span class="nav-number">1.9.</span> <span class="nav-text">其他命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载工具"><span class="nav-number">1.10.</span> <span class="nav-text">下载工具</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">nosalt</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
