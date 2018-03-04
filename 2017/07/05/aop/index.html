@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/05/aop/index.html">
 <meta property="og:site_name" content="nosalt">
 <meta property="og:description" content="一、简述1.什么是AOPAOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提">
-<meta property="og:updated_time" content="2017-12-29T16:48:08.837Z">
+<meta property="og:updated_time" content="2018-03-04T06:31:02.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AOP">
 <meta name="twitter:description" content="一、简述1.什么是AOPAOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提">
@@ -322,6 +322,7 @@
       
         <h1 id="一、简述"><a href="#一、简述" class="headerlink" title="一、简述"></a>一、简述</h1><h2 id="1-什么是AOP"><a href="#1-什么是AOP" class="headerlink" title="1.什么是AOP"></a>1.什么是AOP</h2><p>AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
 <h2 id="2-什么时候使用AOP"><a href="#2-什么时候使用AOP" class="headerlink" title="2.什么时候使用AOP"></a>2.什么时候使用AOP</h2><p>举个例子：当我们的项目有多个入口时，访问不同的页面都要做用户验证，在不使用AOP时我们可以调用一个专门的方法，来完成需求。但如果很多地方都要求呢？把重复代码再写一遍？后期项目需求又改了？作为一个有追求的程序员这样太不优雅了。不就是在方法前插入一段代码吗？AOP分分钟搞定。除此之外，AOP还可以用于记录日志，计算方法执行时间等等</p>
+<p>&lt;–!more–&gt;</p>
 <h2 id="3-概念"><a href="#3-概念" class="headerlink" title="3.概念"></a>3.概念</h2><ol>
 <li>通知、增强处理（Advice）：就是你想要的功能，也就是上面说的日志、耗时计算等。</li>
 <li>连接点（JoinPoint）：允许你通知（Advice）的地方，那可就真多了，基本每个方法的前、后（两者都有也行），或抛出异常是时都可以是连接点（spring只支持方法连接点）。AspectJ还可以让你在构造器或属性注入时都行，不过一般情况下不会这么做，只要记住，和方法有关的前前后后都是连接点。</li>
@@ -394,8 +395,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/05/程序组新人任务(一)/" rel="prev" title="TASK1">
-                TASK1 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/05/constraintlayout/" rel="prev" title="constraintlayout使用">
+                constraintlayout使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
