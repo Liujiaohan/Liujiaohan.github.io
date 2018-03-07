@@ -228,7 +228,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/虚拟机类加载机制/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/类文件结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -247,7 +247,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/11/虚拟机类加载机制/" itemprop="url">虚拟机类加载机制</a></h1>
+                <a class="post-title-link" href="/2017/10/11/类文件结构/" itemprop="url">类文件结构</a></h1>
         
 
         <div class="post-meta">
@@ -321,11 +321,13 @@
       
         
           
-          虚拟机类加载机制类加载的时间类被加载到虚拟机内存中开始，到卸载出内存位置，生命周期包括Loading(加载)、Verification(验证)、Preparetion(准备)、Resolution(解析)、Initialzation(初始化)、Using(使用)、Unloading(卸载)。其中Loading、Verification、Preparation、Initialzation、Unloa
+          类文件结构概述Java虚拟机只与“Class文件”这种特定的二进制文件关联，Class文件格式采用一种类似于C语言结构体的伪结构来存储数据，包括两种数据类型：无符号数和表
+类文件结构魔数与Class文件的版本每个Class文件的头4个字节称为魔数，用来确定一个能被虚拟机接受的Class文件，身份识别
+常量池它是Class文件结构中与其他项目关联最多的数据类型，也是占用Class文件空间大小最大的数
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/11/虚拟机类加载机制/#more" rel="contents">
+            <a class="btn" href="/2017/10/11/类文件结构/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -529,7 +531,7 @@ Java堆：所有线程共享，存放对象实例
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/类文件结构/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/虚拟机类加载机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -548,7 +550,7 @@ Java堆：所有线程共享，存放对象实例
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/11/类文件结构/" itemprop="url">类文件结构</a></h1>
+                <a class="post-title-link" href="/2017/10/11/虚拟机类加载机制/" itemprop="url">虚拟机类加载机制</a></h1>
         
 
         <div class="post-meta">
@@ -622,13 +624,11 @@ Java堆：所有线程共享，存放对象实例
       
         
           
-          类文件结构概述Java虚拟机只与“Class文件”这种特定的二进制文件关联，Class文件格式采用一种类似于C语言结构体的伪结构来存储数据，包括两种数据类型：无符号数和表
-类文件结构魔数与Class文件的版本每个Class文件的头4个字节称为魔数，用来确定一个能被虚拟机接受的Class文件，身份识别
-常量池它是Class文件结构中与其他项目关联最多的数据类型，也是占用Class文件空间大小最大的数
+          虚拟机类加载机制类加载的时间类被加载到虚拟机内存中开始，到卸载出内存位置，生命周期包括Loading(加载)、Verification(验证)、Preparetion(准备)、Resolution(解析)、Initialzation(初始化)、Using(使用)、Unloading(卸载)。其中Loading、Verification、Preparation、Initialzation、Unloa
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/11/类文件结构/#more" rel="contents">
+            <a class="btn" href="/2017/10/11/虚拟机类加载机制/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -1133,158 +1133,6 @@ final方法final方法不能被子类覆盖
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/Majority Element II/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nosalt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="nosalt">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/05/Majority Element II/" itemprop="url">Majority Element</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
-                2017-07-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Majority Element IIGiven an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times. The algorithm should run in linear time and in O(1) space.
-
-从题意可知，超过n/3的数可能有0、1或2个
-
-先假设有两个，为
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/Majority Element II/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/深入理解JAVA虚拟机(一)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1438,7 +1286,7 @@ Java堆：所有线程共享，存放对象实例
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/程序组新人任务(一)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/aop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -1457,169 +1305,7 @@ Java堆：所有线程共享，存放对象实例
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/05/程序组新人任务(一)/" itemprop="url">TASK1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
-                2017-07-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/后台/" itemprop="url" rel="index">
-                    <span itemprop="name">后台</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          程序组新人任务Linux常用命令
-ls 显示文件和目录
-
--l 列出文件详细信息
--a 列出当前目录下所有文件急目录，包括隐藏的
-
-
-mkdir 创建目录
--p 创建目录，若无父目录，则创建p（parent）
-
-cd 切换目录   .” 指的是工作目录，”..” 指的是工作目录的父目录
-
-touch 创建空目录
-
-echo 创建带有内容的文件echo “hello world”&gt;&gt;a.
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/程序组新人任务(一)/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/constraintlayout/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nosalt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="nosalt">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/05/constraintlayout/" itemprop="url">constraintlayout使用</a></h1>
+                <a class="post-title-link" href="/2017/07/05/aop/" itemprop="url">AOP</a></h1>
         
 
         <div class="post-meta">
@@ -1693,25 +1379,312 @@ echo 创建带有内容的文件echo “hello world”&gt;&gt;a.
       
         
           
-          #constraintlayout使用
-constraintlayoutrumen
-
-基本使用
-
-
-
-锁链的使用
-
-
-
-约束线的使用
-
-
-
-          
+          一、简述1.什么是AOPAOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/constraintlayout/#more" rel="contents">
+            <a class="btn" href="/2017/07/05/aop/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/Majority Element II/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/Majority Element II/" itemprop="url">Majority Element</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Majority Element IIGiven an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times. The algorithm should run in linear time and in O(1) space.
+
+从题意可知，超过n/3的数可能有0、1或2个
+
+先假设有两个，为
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/05/Majority Element II/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/线程间协作-《thinking in java》读书笔记（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/线程间协作-《thinking in java》读书笔记（一）/" itemprop="url">线程的协作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          概述线程间协作即有多个线程需要按照一定顺序相互协作进行。主要有两种方法来实现，使用锁（互斥）来同步两个任务的行为。另一种是使用BlockingQueue，它已经帮我们处理好了同步机制，实现更加简单。
+举例接下来以一个实际场景为例，进行演示。假设在一个餐馆中有一个服务员，有一个厨师，而服务员要等到厨子把菜做好了才能上菜，然后回来继续等待。而厨师得到新订单后开始做菜。用两种方式实现之前，我们分析知厨师
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/05/线程间协作-《thinking in java》读书笔记（一）/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
