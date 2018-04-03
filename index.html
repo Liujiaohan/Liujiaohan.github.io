@@ -228,7 +228,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/类文件结构/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/25/Kotlin_Enum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -247,7 +247,310 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/11/类文件结构/" itemprop="url">类文件结构</a></h1>
+                <a class="post-title-link" href="/2018/01/25/Kotlin_Enum/" itemprop="url">Kotlin枚举类</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-25T13:29:00+08:00">
+                2018-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Kotlin/" itemprop="url" rel="index">
+                    <span itemprop="name">Kotlin</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Kotlin 枚举类枚举类最基本的用法是实现一个类型安全的枚举。
+枚举常量用逗号分隔,每个枚举常量都是一个对象。
+123enum class Color&#123;    RED,BLACK,BLUE,GREEN,WHITE&#125;
+枚举初始化每一个枚举都是枚举类的实例，它们可以被初始化： 
+12345enum class Color(val rgb: Int) &#123;    RED(0
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/25/Kotlin_Enum/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/25/Kotlin _对象表达式和对象声明/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/25/Kotlin _对象表达式和对象声明/" itemprop="url">Kotlin对象表达式和对象声明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-25T13:29:00+08:00">
+                2018-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Kotlin/" itemprop="url" rel="index">
+                    <span itemprop="name">Kotlin</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Kotlin 对象表达式和对象声明Kotlin 用对象表达式和对象声明来实现创建一个对某个类做了轻微改动的类的对象，且不需要去声明一个新的子类。
+
+对象表达式通过对象表达式实现一个匿名内部类的对象用于方法的参数中：
+12345678window.addMouseListener(object : MouseAdapter() &#123;    override fun mouseClicked(
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/25/Kotlin _对象表达式和对象声明/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/虚拟机类加载机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/11/虚拟机类加载机制/" itemprop="url">虚拟机类加载机制</a></h1>
         
 
         <div class="post-meta">
@@ -321,13 +624,11 @@
       
         
           
-          类文件结构概述Java虚拟机只与“Class文件”这种特定的二进制文件关联，Class文件格式采用一种类似于C语言结构体的伪结构来存储数据，包括两种数据类型：无符号数和表
-类文件结构魔数与Class文件的版本每个Class文件的头4个字节称为魔数，用来确定一个能被虚拟机接受的Class文件，身份识别
-常量池它是Class文件结构中与其他项目关联最多的数据类型，也是占用Class文件空间大小最大的数
+          虚拟机类加载机制类加载的时间类被加载到虚拟机内存中开始，到卸载出内存位置，生命周期包括Loading(加载)、Verification(验证)、Preparetion(准备)、Resolution(解析)、Initialzation(初始化)、Using(使用)、Unloading(卸载)。其中Loading、Verification、Preparation、Initialzation、Unloa
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/11/类文件结构/#more" rel="contents">
+            <a class="btn" href="/2017/10/11/虚拟机类加载机制/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -531,7 +832,7 @@ Java堆：所有线程共享，存放对象实例
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/虚拟机类加载机制/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/11/类文件结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -550,7 +851,7 @@ Java堆：所有线程共享，存放对象实例
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/11/虚拟机类加载机制/" itemprop="url">虚拟机类加载机制</a></h1>
+                <a class="post-title-link" href="/2017/10/11/类文件结构/" itemprop="url">类文件结构</a></h1>
         
 
         <div class="post-meta">
@@ -624,11 +925,13 @@ Java堆：所有线程共享，存放对象实例
       
         
           
-          虚拟机类加载机制类加载的时间类被加载到虚拟机内存中开始，到卸载出内存位置，生命周期包括Loading(加载)、Verification(验证)、Preparetion(准备)、Resolution(解析)、Initialzation(初始化)、Using(使用)、Unloading(卸载)。其中Loading、Verification、Preparation、Initialzation、Unloa
+          类文件结构概述Java虚拟机只与“Class文件”这种特定的二进制文件关联，Class文件格式采用一种类似于C语言结构体的伪结构来存储数据，包括两种数据类型：无符号数和表
+类文件结构魔数与Class文件的版本每个Class文件的头4个字节称为魔数，用来确定一个能被虚拟机接受的Class文件，身份识别
+常量池它是Class文件结构中与其他项目关联最多的数据类型，也是占用Class文件空间大小最大的数
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/11/虚拟机类加载机制/#more" rel="contents">
+            <a class="btn" href="/2017/10/11/类文件结构/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -1133,7 +1436,7 @@ final方法final方法不能被子类覆盖
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/深入理解JAVA虚拟机(一)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/constraintlayout/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -1152,160 +1455,7 @@ final方法final方法不能被子类覆盖
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/05/深入理解JAVA虚拟机(一)/" itemprop="url">自动内存管理机制</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
-                2017-07-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          自动内存管理机制Java内存区域
-程序计数器：线程私有，当前线程锁执行的字节码的行号指示器
-Java虚拟机栈：线程私有，它的生命周期与线程相同，Java方法在执行时创建一个栈帧用于存储局部变量表、操作数栈、动态链接、方法出口等信息。方法的调用和执行完成对应栈帧的出入
-本地方法栈：相当于native方法的Java虚拟机栈
-Java堆：所有线程共享，存放对象实例
-方法区：线程共享，储存已被虚拟机加载的
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/深入理解JAVA虚拟机(一)/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/aop/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nosalt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="nosalt">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/05/aop/" itemprop="url">AOP</a></h1>
+                <a class="post-title-link" href="/2017/07/05/constraintlayout/" itemprop="url">constraintlayout使用</a></h1>
         
 
         <div class="post-meta">
@@ -1379,11 +1529,25 @@ Java堆：所有线程共享，存放对象实例
       
         
           
-          一、简述1.什么是AOPAOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提
-          ...
+          #constraintlayout使用
+constraintlayoutrumen
+
+基本使用
+
+
+
+锁链的使用
+
+
+
+约束线的使用
+
+
+
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/aop/#more" rel="contents">
+            <a class="btn" href="/2017/07/05/constraintlayout/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -1434,7 +1598,7 @@ Java堆：所有线程共享，存放对象实例
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/Majority Element II/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/todo-mvp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -1453,7 +1617,7 @@ Java堆：所有线程共享，存放对象实例
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/05/Majority Element II/" itemprop="url">Majority Element</a></h1>
+                <a class="post-title-link" href="/2017/07/05/todo-mvp/" itemprop="url">从google的todo学习MVP</a></h1>
         
 
         <div class="post-meta">
@@ -1488,8 +1652,8 @@ Java堆：所有线程共享，存放对象实例
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/安卓/" itemprop="url" rel="index">
+                    <span itemprop="name">安卓</span>
                   </a>
                 </span>
 
@@ -1527,164 +1691,14 @@ Java堆：所有线程共享，存放对象实例
       
         
           
-          Majority Element IIGiven an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times. The algorithm should run in linear time and in O(1) space.
-
-从题意可知，超过n/3的数可能有0、1或2个
-
-先假设有两个，为
+          todo-mvp
+背景知识什么是todo?todo就是简单的记事app
+什么是MVP?网上有很多概念，我也看了很多，一直只有一个模糊的印象。最近通过分析和模仿todo-mvp写了个demo有了完全不同的理解。Model：提供数据，从本地或从云端View：View即视图Presenter：负责逻辑的处理，从Model中取数据，然后处理，传给View层，View将其展示
+开始分析todo-MVP项目结
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/Majority Element II/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/线程间协作-《thinking in java》读书笔记（一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nosalt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="nosalt">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/05/线程间协作-《thinking in java》读书笔记（一）/" itemprop="url">线程的协作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-05T19:49:00+08:00">
-                2017-07-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">in</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          概述线程间协作即有多个线程需要按照一定顺序相互协作进行。主要有两种方法来实现，使用锁（互斥）来同步两个任务的行为。另一种是使用BlockingQueue，它已经帮我们处理好了同步机制，实现更加简单。
-举例接下来以一个实际场景为例，进行演示。假设在一个餐馆中有一个服务员，有一个厨师，而服务员要等到厨子把菜做好了才能上菜，然后回来继续等待。而厨师得到新订单后开始做菜。用两种方式实现之前，我们分析知厨师
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/线程间协作-《thinking in java》读书笔记（一）/#more" rel="contents">
+            <a class="btn" href="/2017/07/05/todo-mvp/#more" rel="contents">
               Weiterlesen &raquo;
             </a>
           </div>
@@ -1772,7 +1786,7 @@ Java堆：所有线程共享，存放对象实例
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -1783,7 +1797,7 @@ Java堆：所有线程共享，存放对象实例
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">Kategorien</span>
                 
               </div>

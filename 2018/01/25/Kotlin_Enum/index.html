@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="Java零碎知识点finalfinal类链接 即final类不能被继承，不能被覆盖，以及final类在执行速度方面比一般类快 final参数final参数的含义如同final变量一样，是常数参数，即当方法接受了这个参数后，其值不能改变。在函数中开匿名内部类需要定义为final final方法final方法不能被子类覆盖">
+<meta name="description" content="Kotlin 枚举类枚举类最基本的用法是实现一个类型安全的枚举。 枚举常量用逗号分隔,每个枚举常量都是一个对象。 123enum class Color&amp;#123;    RED,BLACK,BLUE,GREEN,WHITE&amp;#125; 枚举初始化每一个枚举都是枚举类的实例，它们可以被初始化：  12345enum class Color(val rgb: Int) &amp;#123;    RED(0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java零碎知识点">
-<meta property="og:url" content="http://yoursite.com/2017/07/13/Java零碎知识点/index.html">
+<meta property="og:title" content="Kotlin枚举类">
+<meta property="og:url" content="http://yoursite.com/2018/01/25/Kotlin_Enum/index.html">
 <meta property="og:site_name" content="nosalt">
-<meta property="og:description" content="Java零碎知识点finalfinal类链接 即final类不能被继承，不能被覆盖，以及final类在执行速度方面比一般类快 final参数final参数的含义如同final变量一样，是常数参数，即当方法接受了这个参数后，其值不能改变。在函数中开匿名内部类需要定义为final final方法final方法不能被子类覆盖">
-<meta property="og:updated_time" content="2017-07-13T05:44:23.000Z">
+<meta property="og:description" content="Kotlin 枚举类枚举类最基本的用法是实现一个类型安全的枚举。 枚举常量用逗号分隔,每个枚举常量都是一个对象。 123enum class Color&amp;#123;    RED,BLACK,BLUE,GREEN,WHITE&amp;#125; 枚举初始化每一个枚举都是枚举类的实例，它们可以被初始化：  12345enum class Color(val rgb: Int) &amp;#123;    RED(0">
+<meta property="og:updated_time" content="2018-04-03T13:09:48.106Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java零碎知识点">
-<meta name="twitter:description" content="Java零碎知识点finalfinal类链接 即final类不能被继承，不能被覆盖，以及final类在执行速度方面比一般类快 final参数final参数的含义如同final变量一样，是常数参数，即当方法接受了这个参数后，其值不能改变。在函数中开匿名内部类需要定义为final final方法final方法不能被子类覆盖">
+<meta name="twitter:title" content="Kotlin枚举类">
+<meta name="twitter:description" content="Kotlin 枚举类枚举类最基本的用法是实现一个类型安全的枚举。 枚举常量用逗号分隔,每个枚举常量都是一个对象。 123enum class Color&amp;#123;    RED,BLACK,BLUE,GREEN,WHITE&amp;#125; 枚举初始化每一个枚举都是枚举类的实例，它们可以被初始化：  12345enum class Color(val rgb: Int) &amp;#123;    RED(0">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/13/Java零碎知识点/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/25/Kotlin_Enum/"/>
 
 
 
 
 
-  <title>Java零碎知识点 | nosalt</title>
+  <title>Kotlin枚举类 | nosalt</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/Java零碎知识点/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/25/Kotlin_Enum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nosalt">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java零碎知识点</h1>
+          <h1 class="post-title" itemprop="name headline">Kotlin枚举类</h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-13T13:36:00+08:00">
-                2017-07-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-25T13:29:00+08:00">
+                2018-01-25
               </time>
             
 
@@ -283,8 +283,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Kotlin/" itemprop="url" rel="index">
+                    <span itemprop="name">Kotlin</span>
                   </a>
                 </span>
 
@@ -320,11 +320,24 @@
       
 
       
-        <h1 id="Java零碎知识点"><a href="#Java零碎知识点" class="headerlink" title="Java零碎知识点"></a>Java零碎知识点</h1><h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><h4 id="final类"><a href="#final类" class="headerlink" title="final类"></a>final类</h4><p><a href="&quot;http://yqgao.blog.51cto.com/773490/170194&quot;">链接</a></p>
-<p>即final类不能被继承，不能被覆盖，以及final类在执行速度方面比一般类快</p>
-<h4 id="final参数"><a href="#final参数" class="headerlink" title="final参数"></a>final参数</h4><p>final参数的含义如同final变量一样，是常数参数，即当方法接受了这个参数后，其值不能改变。在函数中开匿名内部类需要定义为final</p>
-<h4 id="final方法"><a href="#final方法" class="headerlink" title="final方法"></a>final方法</h4><p>final方法不能被子类覆盖</p>
-
+        <h1 id="Kotlin-枚举类"><a href="#Kotlin-枚举类" class="headerlink" title="Kotlin 枚举类"></a>Kotlin 枚举类</h1><p>枚举类最基本的用法是实现一个类型安全的枚举。</p>
+<p>枚举常量用逗号分隔,每个枚举常量都是一个对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enum class Color&#123;</span><br><span class="line">    RED,BLACK,BLUE,GREEN,WHITE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="枚举初始化"><a href="#枚举初始化" class="headerlink" title="枚举初始化"></a>枚举初始化</h3><p>每一个枚举都是枚举类的实例，它们可以被初始化： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">enum class Color(val rgb: Int) &#123;</span><br><span class="line">    RED(0xFF0000),</span><br><span class="line">    GREEN(0x00FF00),</span><br><span class="line">    BLUE(0x0000FF)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>默认名称为枚举字符名，值从0开始。若需要指定值，则可以使用其构造函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">enum class Shape(value:Int)&#123;</span><br><span class="line">    ovel(100),</span><br><span class="line">    rectangle(200)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>枚举还支持以声明自己的匿名类及相应的方法、以及覆盖基类的方法。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">enum class ProtocolState &#123;</span><br><span class="line">    WAITING &#123;</span><br><span class="line">        override fun signal() = TALKING</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    TALKING &#123;</span><br><span class="line">        override fun signal() = WAITING</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    abstract fun signal(): ProtocolState</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果枚举类定义任何成员，要使用分号将成员定义中的枚举常量定义分隔开</p>
+<hr>
+<h2 id="使用枚举常量"><a href="#使用枚举常量" class="headerlink" title="使用枚举常量"></a>使用枚举常量</h2><p>Kotlin 中的枚举类具有合成方法，允许遍历定义的枚举常量，并通过其名称获取枚举常数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EnumClass.valueOf(value: String): EnumClass  // 转换指定 name 为枚举值，若未匹配成功，会抛出IllegalArgumentException</span><br><span class="line">EnumClass.values(): Array&lt;EnumClass&gt;        // 以数组的形式，返回枚举值</span><br></pre></td></tr></table></figure>
+<p>获取枚举相关信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val name: String //获取枚举名称</span><br><span class="line">val ordinal: Int //获取枚举值在所有枚举数组中定义的顺序</span><br></pre></td></tr></table></figure>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">enum class Color&#123;</span><br><span class="line">    RED,BLACK,BLUE,GREEN,WHITE</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun main(args: Array&lt;String&gt;) &#123;</span><br><span class="line">    var color:Color=Color.BLUE</span><br><span class="line"></span><br><span class="line">    println(Color.values())</span><br><span class="line">    println(Color.valueOf(&quot;RED&quot;))</span><br><span class="line">    println(color.name)</span><br><span class="line">    println(color.ordinal)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>自 Kotlin 1.1 起，可以使用 <code>enumValues&lt;T&gt;()</code> 和 <code>enumValueOf&lt;T&gt;()</code> 函数以泛型的方式访问枚举类中的常量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">enum class RGB &#123; RED, GREEN, BLUE &#125;</span><br><span class="line"></span><br><span class="line">inline fun &lt;reified T : Enum&lt;T&gt;&gt; printAllValues() &#123;</span><br><span class="line">    print(enumValues&lt;T&gt;().joinToString &#123; it.name &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fun main(args: Array&lt;String&gt;) &#123;</span><br><span class="line">    printAllValues&lt;RGB&gt;() // 输出 RED, GREEN, BLUE</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -348,8 +361,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/13/reserved/" rel="next" title="反编译">
-                <i class="fa fa-chevron-left"></i> 反编译
+              <a href="/2018/01/25/Kotlin _对象表达式和对象声明/" rel="next" title="Kotlin对象表达式和对象声明">
+                <i class="fa fa-chevron-left"></i> Kotlin对象表达式和对象声明
               </a>
             
           </div>
@@ -357,10 +370,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/11/类文件结构/" rel="prev" title="类文件结构">
-                类文件结构 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -483,7 +492,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java零碎知识点"><span class="nav-number">1.</span> <span class="nav-text">Java零碎知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#final"><span class="nav-number">1.1.</span> <span class="nav-text">final</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#final类"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">final类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#final参数"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">final参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#final方法"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">final方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kotlin-枚举类"><span class="nav-number">1.</span> <span class="nav-text">Kotlin 枚举类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举初始化"><span class="nav-number">1.0.1.</span> <span class="nav-text">枚举初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用枚举常量"><span class="nav-number">1.1.</span> <span class="nav-text">使用枚举常量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">1.1.1.</span> <span class="nav-text">实例</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
