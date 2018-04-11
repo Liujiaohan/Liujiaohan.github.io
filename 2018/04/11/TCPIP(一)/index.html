@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="TCP/IP协议（一）附：请务必记住黑体字的概念，有助于后续的理解 OSI模型ｖｓTCP/IP模型 首先我们来认识一下OSI模型，Open System Interconnection的缩写，意为开放式系统互联。国际标准化组织（ISO）制定了OSI模型，该模型定义了不同计算机互联的标准，是设计和描述计算机网络通信的基本框架。TCP/IP模型我觉得时OSI模型的一种简化。  在OSI模型中，通信实体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP&#x2F;IP协议（一）">
+<meta property="og:url" content="http://yoursite.com/2018/04/11/TCPIP(一)/index.html">
+<meta property="og:site_name" content="nosalt">
+<meta property="og:description" content="TCP/IP协议（一）附：请务必记住黑体字的概念，有助于后续的理解 OSI模型ｖｓTCP/IP模型 首先我们来认识一下OSI模型，Open System Interconnection的缩写，意为开放式系统互联。国际标准化组织（ISO）制定了OSI模型，该模型定义了不同计算机互联的标准，是设计和描述计算机网络通信的基本框架。TCP/IP模型我觉得时OSI模型的一种简化。  在OSI模型中，通信实体">
+<meta property="og:image" content="https://i.loli.net/2018/04/10/5accb8d869d20.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/705728/201604/705728-20160424234827195-1493107425.png">
+<meta property="og:image" content="https://nmap.org/book/images/hdr/MJB-TCP-Header-800x564.png">
+<meta property="og:image" content="http://images.cnitblog.com/news/145819/201405/282026176971399.jpg">
+<meta property="og:image" content="http://images.cnitblog.com/news/145819/201405/282026175094157.png">
+<meta property="og:image" content="https://coolshell.cn//wp-content/uploads/2014/05/tcpfsm.png">
+<meta property="og:image" content="http://images.cnitblog.com/news/145819/201405/282026181032341.png">
+<meta property="og:image" content="http://images.cnitblog.com/news/145819/201405/282026180883813.jpg">
+<meta property="og:updated_time" content="2018-04-11T05:08:43.121Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TCP&#x2F;IP协议（一）">
+<meta name="twitter:description" content="TCP/IP协议（一）附：请务必记住黑体字的概念，有助于后续的理解 OSI模型ｖｓTCP/IP模型 首先我们来认识一下OSI模型，Open System Interconnection的缩写，意为开放式系统互联。国际标准化组织（ISO）制定了OSI模型，该模型定义了不同计算机互联的标准，是设计和描述计算机网络通信的基本框架。TCP/IP模型我觉得时OSI模型的一种简化。  在OSI模型中，通信实体">
+<meta name="twitter:image" content="https://i.loli.net/2018/04/10/5accb8d869d20.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/11/TCPIP(一)/"/>
+
+
+
+
+
+  <title>TCP/IP协议（一） | nosalt</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">nosalt</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/TCPIP(一)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nosalt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="nosalt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TCP/IP协议（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-11T13:07:00+08:00">
+                2018-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="TCP-IP协议（一）"><a href="#TCP-IP协议（一）" class="headerlink" title="TCP/IP协议（一）"></a>TCP/IP协议（一）</h1><p><strong>附：请务必记住黑体字的概念，有助于后续的理解</strong></p>
+<h2 id="OSI模型vsTCP-IP模型"><a href="#OSI模型vsTCP-IP模型" class="headerlink" title="OSI模型ｖｓTCP/IP模型"></a>OSI模型ｖｓTCP/IP模型</h2><ul>
+<li><p>首先我们来认识一下OSI模型，Open System Interconnection的缩写，意为开放式系统互联。<a href="https://baike.baidu.com/item/%E5%9B%BD%E9%99%85%E6%A0%87%E5%87%86%E5%8C%96%E7%BB%84%E7%BB%87" target="_blank" rel="noopener">国际标准化组织</a>（ISO）制定了OSI模型，该模型定义了不同计算机互联的标准，是设计和描述计算机网络通信的基本框架。TCP/IP模型我觉得时OSI模型的一种简化。</p>
+</li>
+<li><p>在OSI模型中，通信实体的对等层之间不允许直接通信，各层之间是严格单向依赖，上层使用下层提供的服务（service user），下层向上层提供服务（service provider）。</p>
+</li>
+<li><p>为了标识通信实体中进行通信的进程，TCP/IP协议提出了协议端口（protocol Port）的概念。端口是一种抽象的网络结构（包括一些数据结构和I/O缓冲区）。应用程序通过系统调用与某端口号建立连接后（binding），传输层传给该端口的数据都被相应的程序接收，相应程序发送给传输层的据都通过该端口输出。</p>
+<p><img src="https://i.loli.net/2018/04/10/5accb8d869d20.png" alt="OSI"></p>
+<p><img src="https://images2015.cnblogs.com/blog/705728/201604/705728-20160424234827195-1493107425.png" alt="OSI模型与TCP/IP模型的关系"></p>
+<p>从上图可知其中TCP属于Transport(传输层)该层的数据叫做<strong>Segment</strong>(数据段),IP属于Network(网络层),该层的数据叫做<strong>Packet</strong>(数据包),ARP属于ＤataLink,该层的数据叫做<strong>Frame</strong>(帧)。所有应用层的报文会通过port向下传递给TCP包装成Segment中，然后TCP的Segment会发给IP包装成Packet中，然后再发给以太网Ethernet的Frame中，传到对端后，各个层解析自己的协议，然后把数据交给更高层的协议处理。TCP/IP不是指两个协议，而是基于 TCP 和 IP 这两个最初的协议之上的不同的通信协议的大的<strong>集合</strong>。</p>
+</li>
+</ul>
+<h2 id="TCP报文"><a href="#TCP报文" class="headerlink" title="TCP报文"></a>TCP报文</h2><p><img src="https://nmap.org/book/images/hdr/MJB-TCP-Header-800x564.png" alt="TCP报文"></p>
+<p>对于TCP报文，我们重点关注一下几点：</p>
+<ul>
+<li>TCP的包是没有IP地址的，那是IP层上的事。但是有源端口和目标端口。</li>
+<li>一个TCP连接需要四个元组来表示是同一个连接（src_ip, src_port, dst_ip, dst_port）准确说是五元组，还有一个是协议。但因为这里只是说TCP协议，所以，这里我只说四元组。</li>
+<li>注意上图中的四个非常重要的东西：<ul>
+<li><strong>Sequence Number</strong>是包的序号，<strong>用来解决网络包乱序（reordering）问题。</strong>seq序号，占32位，用来标识从TCP源端向目的端发送的字节流，发起方发送数据时对此进行标记。</li>
+<li><strong>Acknowledgement Number</strong>就是ACK——用于<strong>确认收到</strong>，<strong>用来解决不丢包的问题</strong>。Ack序号，占32位，只有ACK标志位为1时，确认序号字段才有效，Ack=Seq+1。</li>
+<li><strong>Window又叫Advertised-Window</strong>，也就是著名的滑动窗口（Sliding Window），<strong>用于解决流量控制的，拥塞控制</strong>。</li>
+<li><strong>TCP Flag</strong> ，也就是包的类型，<strong>主要是用于操控TCP的状态机的</strong>，<ul>
+<li>标志位：共6个，即URG、ACK、PSH、RST、SYN、FIN等，具体含义如下：为1时才有效<br>（A）URG：紧急指针（urgent pointer）有效。<br>（B）<strong>ACK</strong>：确认序号有效。<br>（C）PSH：接收方应该尽快将这个报文交给应用层。<br>（D）RST：重置连接。<br>（E）<strong>SYN</strong>：发起一个新连接。<br>（F）<strong>FIN</strong>：释放一个连接。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>最大报文长度<strong>MSS</strong>需要根据网络状态确定</li>
+</ul>
+<h2 id="TCP建立连接"><a href="#TCP建立连接" class="headerlink" title="TCP建立连接"></a>TCP建立连接</h2><h3 id="TCP三次握手四次挥手的过程"><a href="#TCP三次握手四次挥手的过程" class="headerlink" title="TCP三次握手四次挥手的过程"></a>TCP三次握手四次挥手的过程</h3><p><img src="http://images.cnitblog.com/news/145819/201405/282026176971399.jpg" alt="TCP三次握手四次挥手的过程"></p>
+<ul>
+<li><p>三次握手：</p>
+<ol>
+<li><p>client端：TCP Fflags的SYN为1，表示希望建立连接，seq=x</p>
+<p>(证明了client端发送数据的能力)</p>
+</li>
+</ol>
+<p>2.　Server端: TCP Flags的SYN为1表示希望建立连接，seq=y,ack=x+1</p>
+<p>   (证明Server端接受数据和发送数据的能力，同时发送ack告诉Client我知道了)</p>
+<p>3.　Client端：发送ack=y+1</p>
+<p>   (证明了Client接受消息的能力，同时告诉Server我收到了)</p>
+<p>   <strong>通过三次握手，cs各自证明的自己发送和接受消息的能力</strong></p>
+<p>| Client | Server | seq  | ack  | size | SYN |<br>| :—-: | :—-: | :–: | :–: | :–: | :–:|<br>|  C-&gt;   |   S    | 1000 |  0   |  1   | 1   |<br>| S-&gt; | C | 2000 | 1000+1 |1|1|<br>| C-&gt; | S | 1001 | 2000+1 | 1 |0|</p>
+</li>
+<li><p>传输数据</p>
+<p>在TCP建立连接后，就可以开始传输数据了。TCP工作在全双工模式，它可以同时进行双向数据传输。这里为了简化，我们只谈Client向Server发送数据的情况，而Server向Client发送数据的原理和它是类似的，这里便不重复说明。</p>
+<p>服务器向客户端发送一个数据包后，客户端收到这个数据包后，会向服务器发送一个确认数据包。</p>
+</li>
+</ul>
+<p>  传输数据的简要过程如下：</p>
+<p>  <strong>1)   发送数据</strong>：client向server发送一个带有数据的数据包，该数据包中的序列号和确认号与建立连接第三步的数据包中的序列号和确认号相同；</p>
+<p>  <strong>2)   确认收到</strong>：server收到该数据包，向client发送一个确认数据包，该数据包中，序列号是为上一个数据包中的确认号值，而确认号为client发送的上一个数据包中的序列号+所该数据包中所带数据的大小。数据分段中的序列号可以保证所有传输的数据按照正常的次序进行重组，而且通过确认保证数据传输的完整性。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">client</th>
+<th style="text-align:center">server</th>
+<th style="text-align:center">seq</th>
+<th style="text-align:center">ack</th>
+<th style="text-align:center">size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">C-&gt;</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">1001</td>
+<td style="text-align:center">2001</td>
+<td style="text-align:center">154</td>
+</tr>
+<tr>
+<td style="text-align:center">S-&gt;</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2001</td>
+<td style="text-align:center">1001+154-54</td>
+<td style="text-align:center">54</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>四次挥手：</p>
+<p>因为TCP连接是全双工的工作模式，所以每个方向上需要单独关闭。在TCP关闭连接时，首先关闭的一方（即发送第一个终止数据包的）将执行主动关闭，而另一方（收到这个终止数据包的）再执行被动关闭。</p>
+</li>
+</ul>
+<p>   关闭连接的4个步骤如下： </p>
+<p>   <strong>1)   第1步</strong>：Client完成它的数据发送任务后，会主动向Server发送一个终止数据包，以关闭在这个方向上的TCP连接。该数据包中，序列号为Server发送的上一个数据包中的确认号值，而确认号为client发送的上一个数据包中的序列号+该数据包所带的数据的大小；</p>
+<p>   <strong>2)   第2步</strong>：Server收到Client发送的终止数据包后，将对Client发送确认信息，以关闭该方向上的TCP连接。这时的数据包中，序列号为第1步中的确认号值，而确认号为第1步的数据包中的序列号+1；</p>
+<p>   <strong>3)   第3步</strong>：同理，Server完成它的数据发送任务后，就也会向Client发送一个终止数据包，以关闭在这个方向上的TCP连接，该数据包中，序列号为Client发送的上一个数据包中的确认号值，而确认号为Server发送的上一个数据包中的序列号+该数据包所带数据的大小；</p>
+<p>   <strong>4)   第4步</strong>：Client收到Server发送的终止数据包后，将对Server发送确认信息，以关闭该方向上的TCP连接。这时在数据包中，序列号为第3步中的确认号值，而确认号为第3步数据包中的序列号+1；</p>
+<p>   <strong>注意</strong>：因为FIN和SYN一样，也要占一个序号。理论上服务器在TCP连接关闭时发送的终止数据包中，只有终止位是置1，然后客户端进行确认。但是在实际的TCP实现中，在终止数据包中，确认位和终止位是同时置为1的，确认位置为1表示对最后一次传输的数据进行确认，终止位置为1表示关闭该方向的TCP连接。</p>
+<p>​    </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Client</th>
+<th style="text-align:center">Server</th>
+<th style="text-align:center">seq</th>
+<th style="text-align:center">ack</th>
+<th style="text-align:center">size</th>
+<th style="text-align:center">FIN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">C-&gt;</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">1101</td>
+<td style="text-align:center">1001+100-54</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">S-&gt;</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">1001+100-54</td>
+<td style="text-align:center">1101+1</td>
+<td style="text-align:center">54</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">S-&gt;</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">1001</td>
+<td style="text-align:center">1001+200-54</td>
+<td style="text-align:center">200</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">C-&gt;</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">1001-200-54</td>
+<td style="text-align:center">1001+1</td>
+<td style="text-align:center">54</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://images.cnitblog.com/news/145819/201405/282026175094157.png" alt="四次挥手"></p>
+<h3 id="状态机"><a href="#状态机" class="headerlink" title="状态机"></a>状态机</h3><p><img src="https://coolshell.cn//wp-content/uploads/2014/05/tcpfsm.png" alt="状态机"></p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>另外，有几个事情需要注意一下：</p>
+<ul>
+<li><strong>关于建连接时SYN超时</strong>。如果server端接到了clien发的SYN后回了SYN-ACK后client掉线了，server端没有收到client回来的ACK，那么，这个连接处于一个中间状态，即没成功，也没失败。于是，server端如果在一定时间内没有收到的TCP会重发SYN-ACK。在Linux下，默认重试次数为5次，重试的间隔时间从1s开始每次都翻售，5次的重试时间间隔为1s, 2s, 4s, 8s, 16s，总共31s，第5次发出后还要等32s都知道第5次也超时了，所以，总共需要 1s + 2s + 4s+ 8s+ 16s + 32s = 2^6 -1 = 63s，TCP才会把断开这个连接。</li>
+</ul>
+<ul>
+<li><strong>关于SYN Flood攻击</strong>。一些恶意的人就为此制造了SYN Flood攻击——给服务器发了一个SYN后，就下线了，于是服务器需要默认等63s才会断开连接，这样，攻击者就可以把服务器的syn连接的队列耗尽，让正常的连接请求不能处理。于是，Linux下给了一个叫<strong>tcp_syncookies</strong>的参数来应对这个事——当SYN队列满了后，TCP会通过源地址端口、目标地址端口和时间戳打造出一个特别的Sequence Number发回去（又叫cookie），如果是攻击者则不会有响应，如果是正常连接，则会把这个 SYN Cookie发回来，然后服务端可以通过cookie建连接（即使你不在SYN队列中）。请注意，<strong>请先千万别用tcp_syncookies来处理正常的大负载的连接的情况</strong>。因为，synccookies是妥协版的TCP协议，并不严谨。对于正常的请求，你应该调整三个TCP参数可供你选择，第一个是：tcp_synack_retries 可以用他来减少重试次数；第二个是：tcp_max_syn_backlog，可以增大SYN连接数；第三个是：tcp_abort_on_overflow 处理不过来干脆就直接拒绝连接了。</li>
+</ul>
+<ul>
+<li><strong>关于ISN的初始化</strong>。ISN是不能hard code的，不然会出问题的——比如：如果连接建好后始终用1来做ISN，如果client发了30个segment过去，但是网络断了，于是 client重连，又用了1做ISN，但是之前连接的那些包到了，于是就被当成了新连接的包，此时，client的Sequence Number 可能是3，而Server端认为client端的这个号是30了。全乱了。<a href="http://tools.ietf.org/html/rfc793" target="_blank" rel="noopener">RFC793</a>中说，ISN会和一个假的时钟绑在一起，这个时钟会在每4微秒对ISN做加一操作，直到超过2^32，又从0开始。这样，一个ISN的周期大约是4.55个小时。因为，我们假设我们的TCP Segment在网络上的存活时间不会超过Maximum Segment Lifetime（缩写为MSL - <a href="http://en.wikipedia.org/wiki/Maximum_Segment_Lifetime" target="_blank" rel="noopener">Wikipedia语条</a>），所以，只要MSL的值小于4.55小时，那么，我们就不会重用到ISN。</li>
+</ul>
+<ul>
+<li><strong>关于 MSL 和 TIME_WAIT</strong>。通过上面的ISN的描述，相信你也知道MSL是怎么来的了。我们注意到，在TCP的状态图中，从TIME_WAIT状态到CLOSED状态，有一个超时设置，这个超时设置是 2<em>MSL（<a href="http://tools.ietf.org/html/rfc793" target="_blank" rel="noopener">RFC793</a>定义了MSL为2分钟，Linux设置成了30s）为什么要这有TIME_WAIT？为什么不直接给转成CLOSED状态呢？主要有两个原因：1）<strong>TIME_WAIT确保有足够的时间让对端收到了ACK</strong>，如果<strong>被动关闭的那方</strong>没有收到Ack，就会触发被动端<em>*重发Fin</em></em>，一来一去正好2个MSL，2）有足够的时间让这个连接不会跟后面的连接混在一起（你要知道，有些自做主张的路由器会缓存IP数据包，如果连接被重用了，那么这些延迟收到的包就有可能会跟新连接混在一起）。你可以看看这篇文章《<a href="http://www.serverframework.com/asynchronousevents/2011/01/time-wait-and-its-design-implications-for-protocols-and-scalable-servers.html" target="_blank" rel="noopener">TIME_WAIT and its design implications for protocols and scalable client server systems</a>》</li>
+</ul>
+<ul>
+<li><strong>关于TIME_WAIT数量太多</strong>。从上面的描述我们可以知道，TIME_WAIT是个很重要的状态，但是如果在大并发的短链接下，TIME_WAIT 就会太多，这也会消耗很多系统资源。只要搜一下，你就会发现，十有八九的处理方式都是教你设置两个参数，一个叫<strong>tcp_tw_reuse</strong>，另一个叫<strong>tcp_tw_recycle</strong>的参数，这两个参数默认值都是被关闭的，后者recyle比前者resue更为激进，resue要温柔一些。另外，如果使用tcp_tw_reuse，必需设置tcp_timestamps=1，否则无效。这里，你一定要注意，<strong>打开这两个参数会有比较大的坑——可能会让TCP连接出一些诡异的问题</strong>（因为如上述一样，如果不等待超时重用连接的话，新的连接可能会建不上。正如<a href="https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt" target="_blank" rel="noopener">官方文档</a>上说的一样“<strong>It should not be changed without advice/request of technical experts</strong>”）。</li>
+</ul>
+<ul>
+<li><ul>
+<li><strong>关于tcp_tw_reuse</strong>。官方文档上说tcp_tw_reuse 加上tcp_timestamps（又叫PAWS, for Protection Against Wrapped Sequence Numbers）可以保证协议的角度上的安全，但是你需要tcp_timestamps在两边都被打开（你可以读一下<a href="http://lxr.free-electrons.com/ident?i=tcp_twsk_unique" target="_blank" rel="noopener">tcp_twsk_unique</a>的源码 ）。我个人估计还是有一些场景会有问题。只对客户端起作用，开启后客户端在1s内回收</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><ul>
+<li><strong>关于tcp_tw_recycle</strong>。如果是tcp_tw_recycle被打开了话，会假设对端开启了tcp_timestamps，然后会去比较时间戳，如果<strong>时间戳变大</strong>了，就可以<strong>重用</strong>。但是，如果对端是一个NAT网络的话（如：一个公司只用一个IP出公网）或是对端的IP被另一台重用了，这个事就复杂了。建链接的SYN可能就被直接丢掉了（你可能会看到connection time out的错误）（如果你想观摩一下Linux的内核代码，请参看源码<a href="http://lxr.free-electrons.com/ident?i=tcp_timewait_state_process" target="_blank" rel="noopener"> tcp_timewait_state_process</a>）。对客户端和服务器同时起作用，开启后在 3.5*RTO 内回收，RTO 200ms~ 120s 具体时间视网络状况。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><ul>
+<li><strong>关于tcp_max_tw_buckets</strong>。这个是控制并发的TIME_WAIT的数量，默认值是180000，如果超限，那么，系统会把多的给destory掉，然后在日志里打一个警告（如：time wait bucket table overflow），官网文档说这个参数是用来对抗DDoS攻击的。也说的默认值180000并不小。这个还是需要根据实际情况考虑。</li>
+</ul>
+</li>
+</ul>
+<p><strong>Again，使用tcp_tw_reuse和tcp_tw_recycle来解决TIME_WAIT的问题是非常非常危险的，因为这两个参数违反了TCP协议（RFC 1122</strong></p>
+<p>　　其实，TIME_WAIT表示的是你主动断连接，所以，这就是所谓的“不作死不会死”。试想，如果让对端断连接，那么这个破问题就是对方的了，呵呵。另外，如果你的服务器是于HTTP服务器，那么设置一个<a href="http://en.wikipedia.org/wiki/HTTP_persistent_connection" target="_blank" rel="noopener">HTTP的KeepAlive</a>有多重要（浏览器会重用一个TCP连接来处理多个HTTP请求），然后让客户端去断链接（你要小心，浏览器可能会非常贪婪，他们不到万不得已不会主动断连接）。</p>
+<h2 id="TCP重传机制"><a href="#TCP重传机制" class="headerlink" title="TCP重传机制"></a>TCP重传机制</h2><p>TCP要保证所有的数据包都可以到达，所以，必需要有重传机制。</p>
+<p>　　注意，接收端给发送端的Ack确认只会确认最后一个连续的包，比如，发送端发了1,2,3,4,5一共五份数据，接收端收到了1，2，于是回ack 3，然后收到了4（注意此时3没收到），此时的TCP会怎么办？我们要知道，因为正如前面所说的，<strong>SeqNum和Ack是以字节数为单位，所以ack的时候，不能跳着确认，只能确认最大的连续收到的包</strong>，不然，发送端就以为之前的都收到了。</p>
+<h3 id="超时重传机制"><a href="#超时重传机制" class="headerlink" title="　　超时重传机制"></a>　　超时重传机制</h3><p>　　一种是不回ack，死等3，当发送方发现收不到3的ack超时后，会重传3。一旦接收方收到3后，会ack 回 4——意味着3和4都收到了。</p>
+<p>　　但是，这种方式会有比较严重的问题，那就是因为要死等3，所以会导致4和5即便已经收到了，而发送方也完全不知道发生了什么事，因为没有收到Ack，所以，发送方可能会悲观地认为也丢了，所以有可能也会导致4和5的重传。</p>
+<p>　　对此有两种选择：</p>
+<ul>
+<li>一种是仅重传timeout的包。也就是第3份数据。</li>
+<li>另一种是重传timeout后所有的数据，也就是第3，4，5这三份数据。</li>
+</ul>
+<p>　　这两种方式有好也有不好。第一种会节省带宽，但是慢，第二种会快一点，但是会浪费带宽，也可能会有无用功。但总体来说都不好。因为都在等timeout，timeout可能会很长</p>
+<h3 id="快速重传机制"><a href="#快速重传机制" class="headerlink" title="　　快速重传机制"></a>　　快速重传机制</h3><p>　　于是，TCP引入了一种叫<strong>Fast Retransmit</strong> 的算法，<strong>不以时间驱动，而以数据驱动重传</strong>。也就是说，如果，包没有连续到达，就ack最后那个可能被丢了的包，如果发送方连续收到3次相同的ack，就重传。Fast Retransmit的好处是不用等timeout了再重传。</p>
+<p>　　比如：如果发送方发出了1，2，3，4，5份数据，第一份先到送了，于是就ack回2，结果2因为某些原因没收到，3到达了，于是还是ack回2，后面的4和5都到了，但是还是ack回2，因为2还是没有收到，于是发送端收到了三个ack=2的确认，知道了2还没有到，于是就马上重转2。然后，接收端收到了2，此时因为3，4，5都收到了，于是ack回6。示意图如下：</p>
+<p><img src="http://images.cnitblog.com/news/145819/201405/282026181032341.png" alt="img"></p>
+<p>　　Fast Retransmit只解决了一个问题，就是timeout的问题，它依然面临一个艰难的选择，就是重转之前的一个还是重装所有的问题。对于上面的示例来说，是重传#2呢还是重传#2，#3，#4，#5呢？因为发送端并不清楚这连续的3个ack(2)是谁传回来的？也许发送端发了20份数据，是#6，#10，#20传来的呢。这样，发送端很有可能要重传从2到20的这堆数据（这就是某些TCP的实际的实现）。可见，这是一把双刃剑。</p>
+<h3 id="SACK-方法"><a href="#SACK-方法" class="headerlink" title="　　SACK 方法"></a>　　SACK 方法</h3><p>　　另外一种更好的方式叫：<strong>Selective Acknowledgment (SACK)</strong>（参看<a href="http://tools.ietf.org/html/rfc2018" target="_blank" rel="noopener">RFC 2018</a>），这种方式需要在TCP头里加一个SACK的东西，ACK还是Fast Retransmit的ACK，SACK则是汇报收到的数据碎版。参看下图：</p>
+<p><img src="http://images.cnitblog.com/news/145819/201405/282026180883813.jpg" alt="img"></p>
+<p>　　这样，在发送端就可以根据回传的SACK来知道哪些数据到了，哪些没有到。于是就优化了Fast Retransmit的算法。当然，这个协议需要两边都支持。在 Linux下，可以通过<strong>tcp_sack</strong>参数打开这个功能（Linux 2.4后默认打开）。</p>
+<p>　　这里还需要注意一个问题——<strong>接收方Reneging[ri`neig 违背协议]，所谓Reneging的意思就是接收方有权把已经报给发送端SACK里的数据给丢了</strong>。这样干是不被鼓励的，因为这个事会把问题复杂化了，但是，接收方这么做可能会有些极端情况，比如要把内存给别的更重要的东西。<strong>所以，发送方也不能完全依赖SACK，还是要依赖ACK，并维护Time-Out，如果后续的ACK没有增长，那么还是要把SACK的东西重传，另外，接收端这边永远不能把SACK的包标记为Ack。</strong></p>
+<p>　　注意：SACK会消费发送方的资源，试想，如果一个攻击者给数据发送方发一堆SACK的选项，这会导致发送方开始要重传甚至遍历已经发出的数据，这会消耗很多发送端的资源。详细的东西请参看《<a href="http://www.ibm.com/developerworks/cn/linux/l-tcp-sack/" target="_blank" rel="noopener">TCP SACK的性能权衡</a>》</p>
+<h3 id="Duplicate-SACK-–-重复收到数据的问题"><a href="#Duplicate-SACK-–-重复收到数据的问题" class="headerlink" title="　　Duplicate SACK – 重复收到数据的问题"></a>　　Duplicate SACK – 重复收到数据的问题</h3><p>　　Duplicate SACK又称D-SACK，<strong>其主要使用了SACK来告诉发送方有哪些数据被重复接收了</strong>。<a href="http://www.ietf.org/rfc/rfc2883.txt" target="_blank" rel="noopener">RFC-2833</a>里有详细描述和示例。下面举几个例子（来源于<a href="http://www.ietf.org/rfc/rfc2883.txt" target="_blank" rel="noopener">RFC-2833</a>）</p>
+<p>　　D-SACK使用了SACK的第一个段来做标志，</p>
+<ul>
+<li>如果SACK的第一个段的范围被ACK所覆盖，那么就是D-SACK</li>
+</ul>
+<ul>
+<li>如果SACK的第一个段的范围被SACK的第二个段覆盖，那么就是D-SACK</li>
+</ul>
+<p><strong>示例一：ACK丢包</strong></p>
+<p>　　下面的示例中，丢了两个ACK，所以，发送端重传了第一个数据包（3000-3499），于是接收端发现重复收到，于是回了一个SACK=3000-3500，因为ACK都到了4000意味着收到了<strong>4000之前</strong>的所有数据，所以这个SACK就是D-SACK——旨在告诉发送端我收到了重复的数据，而且我们的发送端还知道，数据包没有丢，丢的是ACK包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Transmitted  Received    ACK Sent</span><br><span class="line"></span><br><span class="line">Segment      Segment     (Including SACK Blocks)</span><br><span class="line"></span><br><span class="line">3000-3499    3000-3499   3500 (ACK dropped)</span><br><span class="line"></span><br><span class="line">3500-3999    3500-3999   4000 (ACK dropped)</span><br><span class="line"></span><br><span class="line">3000-3499    3000-3499   4000, SACK=3000-3500</span><br><span class="line"></span><br><span class="line">                                    ---------</span><br></pre></td></tr></table></figure>
+<p><strong>示例二，网络延误</strong></p>
+<p>　　下面的示例中，网络包（1000-1499）被网络给延误了，导致发送方没有收到ACK，而后面到达的三个包触发了“Fast Retransmit算法”，所以重传，但重传时，被延误的包又到了，所以，回了一个SACK=1000-1500，因为ACK已到了3000，所以，这个SACK是D-SACK——标识收到了重复的包。</p>
+<p>　　这个案例下，发送端知道之前因为“Fast Retransmit算法”触发的重传不是因为发出去的包丢了，也不是因为回应的ACK包丢了，而是因为网络延时了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Transmitted    Received    ACK Sent</span><br><span class="line"></span><br><span class="line">Segment        Segment     (Including SACK Blocks)</span><br><span class="line"></span><br><span class="line">500-999        500-999     1000</span><br><span class="line"></span><br><span class="line">1000-1499      (delayed)</span><br><span class="line"></span><br><span class="line">1500-1999      1500-1999   1000, SACK=1500-2000</span><br><span class="line"></span><br><span class="line">2000-2499      2000-2499   1000, SACK=1500-2500</span><br><span class="line"></span><br><span class="line">2500-2999      2500-2999   1000, SACK=1500-3000</span><br><span class="line"></span><br><span class="line">1000-1499      1000-1499   3000</span><br><span class="line"></span><br><span class="line">               1000-1499   3000, SACK=1000-1500</span><br><span class="line"></span><br><span class="line">                                      ---------</span><br></pre></td></tr></table></figure>
+<p>　　可见，引入了D-SACK，有这么几个好处：</p>
+<p>　　1）可以让发送方知道，是发出去的包丢了，还是回来的ACK包丢了。</p>
+<p>　　2）是不是自己的timeout太小了，导致重传。</p>
+<p>　　3）网络上出现了先发的包后到的情况（又称reordering）</p>
+<p>　　4）网络上是不是把我的数据包给复制了。</p>
+<p>　　<strong>知道这些东西可以很好得帮助TCP了解网络情况，从而可以更好的做网络上的流控</strong>。</p>
+<p>　　Linux下的tcp_dsack参数用于开启这个功能（Linux 2.4后默认打开）</p>
+<p>参考链接：</p>
+<p><a href="https://kb.cnblogs.com/page/209100/" target="_blank" rel="noopener">TCP的那些事儿</a></p>
+<p><a href="https://blog.csdn.net/xuguokun1986/article/details/65627414" target="_blank" rel="noopener">TCP的SEQ和ACK的生成</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite" target="_blank" rel="noopener">维基解密</a></p>
+<p><a href="https://www.cnblogs.com/qishui/p/5428938.html" target="_blank" rel="noopener"><a href="http://www.cnblogs.com/qishui/p/5428938.html" target="_blank" rel="noopener">OSI七层模型与TCP/IP五层模型</a></a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/25/Kotlin _对象表达式和对象声明/" rel="next" title="Kotlin对象表达式和对象声明">
+                <i class="fa fa-chevron-left"></i> Kotlin对象表达式和对象声明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">nosalt</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP协议（一）"><span class="nav-number">1.</span> <span class="nav-text">TCP/IP协议（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI模型vsTCP-IP模型"><span class="nav-number">1.1.</span> <span class="nav-text">OSI模型ｖｓTCP/IP模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP报文"><span class="nav-number">1.2.</span> <span class="nav-text">TCP报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP建立连接"><span class="nav-number">1.3.</span> <span class="nav-text">TCP建立连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP三次握手四次挥手的过程"><span class="nav-number">1.3.1.</span> <span class="nav-text">TCP三次握手四次挥手的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态机"><span class="nav-number">1.3.2.</span> <span class="nav-text">状态机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">1.3.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP重传机制"><span class="nav-number">1.4.</span> <span class="nav-text">TCP重传机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#超时重传机制"><span class="nav-number">1.4.1.</span> <span class="nav-text">　　超时重传机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速重传机制"><span class="nav-number">1.4.2.</span> <span class="nav-text">　　快速重传机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SACK-方法"><span class="nav-number">1.4.3.</span> <span class="nav-text">　　SACK 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duplicate-SACK-–-重复收到数据的问题"><span class="nav-number">1.4.4.</span> <span class="nav-text">　　Duplicate SACK – 重复收到数据的问题</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">nosalt</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
